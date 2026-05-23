@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #b84e39;
+    border-bottom: 8px #eaa973 solid;
+}
+
+.navbar-brand {
+    font-weight: bold !important;
+}
+
+.navbar-nav > li > a {
+    font-weight: bold !important;
+}
+
+.bs-sidebar li a {
+    color: #b84e39 !important;
+}
+
+.bs-sidebar li a:hover {
+    background-color: #f0f0f0 !important;
+    color: #000000 !important; 
+}
+
+.bs-sidebar li.active a {
+    background-color: #f0f0f0 !important;
+    color: #ff6600 !important;
+    font-weight: bold !important;
+}
