@@ -1,5 +1,7 @@
-site_name: MinicursoGenomics
+site_name: SBBE26 | Minicurso Genômica
+theme:
+  name: cinder
 nav:
-  - Home: index.md
-  - About: about.md
-theme: readthedocs
+  - Primeiros Passos: about.md
+  - Mãos na Massa: firststeps.md
+  - Instrutores: instructors.md
