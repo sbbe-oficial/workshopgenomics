@@ -113,12 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bs-sidebar li a:hover {
-    background-color: #f0f0f0 !important;
+    background-color: transparent !important;
     color: #000000 !important; 
 }
 
 .bs-sidebar li.active a {
-    background-color: #f0f0f0 !important;
+    background-color: transparent !important;
     color: #000000 !important;
     font-weight: bold !important;
 }
