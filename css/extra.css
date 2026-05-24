@@ -63,12 +63,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar li a:hover {
     background-color: transparent !important;
-    color: #000000 !important; 
+    color: #eaa973 !important; 
 }
 
 .navbar-brand:hover {
     background-color: transparent !important;
-    color: #000000 !important;
+    color: #eaa973 !important;
 }
 
 .navbar li.active a {
@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bs-sidebar li a:hover {
     background-color: transparent !important;
-    color: #000000 !important; 
+    color: #eaa973 !important; 
 }
 
 .bs-sidebar li.active a {
@@ -144,7 +144,7 @@ a[href^="http"] {
 }
 
 a[href^="http"]:hover {
-    color: #000000 !important;
+    color: #eaa973 !important;
 }
 
 div a i.fa-globe,
@@ -156,7 +156,7 @@ div a i.ai-lattes {
 div a:hover i.fa-globe,
 div a:hover i.ai-google-scholar,
 div a:hover i.ai-lattes {
-    color: #000000;
+    color: #eaa973 !important;
 }
 
 /* Remove all gaps between columns and edges */
