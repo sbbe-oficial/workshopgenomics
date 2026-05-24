@@ -1,26 +1,24 @@
-/* Define the custom font from your local files */
 @font-face {
     font-family: 'Barlow';
-    src: url('/assets/fonts/Barlow-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/Barlow-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Barlow';
-    src: url('/assets/fonts/Barlow-Bold.ttf') format('truetype');
+    src: url('../assets/fonts/Barlow-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Barlow';
-    src: url('/assets/fonts/Barlow-Italic.ttf') format('truetype');
+    src: url('../assets/fonts/Barlow-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
 }
-
 
 body {
     font-family: 'Barlow', serif;
