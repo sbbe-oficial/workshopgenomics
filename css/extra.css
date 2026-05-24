@@ -95,6 +95,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent !important;
 }
 
+a[href^="http"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
 /* Enhanced site name styling */
 .navbar-brand {
     font-weight: bold !important;
