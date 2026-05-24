@@ -1,6 +1,63 @@
+/* Define the custom font from your local files */
+@font-face {
+    font-family: 'Barlow';
+    src: url('/assets/fonts/Barlow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Barlow';
+    src: url('/assets/fonts/Barlow-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Barlow';
+    src: url('/assets/fonts/Barlow-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+body {
+    font-family: 'Barlow', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow', serif;
+}
+
+
+/* Site name in navbar */
+.navbar-brand {
+    font-family: 'Barlow', serif !important;
+    font-weight: 700 !important;
+}
+
+/* Main navigation menu items */
+.navbar-nav > li > a {
+    font-family: 'Barlow', serif !important;
+    font-weight: 500 !important;
+}
+
+/* Sidebar navigation */
+.bs-sidebar li a {
+    font-family: 'Barlow', serif !important;
+    font-weight: 500 !important;
+}
+
+/* Sidebar headings (if any) */
+.bs-sidebar .nav > li > a {
+    font-family: 'Barlow', serif !important;
+}
+
 .navbar {
     background-color: #b84e39;
     border-bottom: 6px #eaa973 solid;
+    font-size: 15px;
     min-height: 100px !important;
 }
 
