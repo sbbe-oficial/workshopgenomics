@@ -40,6 +40,16 @@ h3 {
     font-weight: bold !important;
 }
 
+a[href^="http"] {
+    color: #b84e39 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+a[href^="http"]:hover {
+    color: #000000 !important;
+}
+
 div a i.fa-globe,
 div a i.ai-google-scholar,
 div a i.ai-lattes {
@@ -51,3 +61,22 @@ div a:hover i.ai-google-scholar,
 div a:hover i.ai-lattes {
     color: #000000;
 }
+
+/* Remove all gaps between columns and edges */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.col-md-3, .col-md-9 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Make the overall container wider to use more screen space */
+.container {
+    max-width: 100% !important;  /* Use 95% of screen width */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
