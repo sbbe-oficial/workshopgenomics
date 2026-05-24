@@ -1,14 +1,54 @@
 .navbar {
     background-color: #b84e39;
-    border-bottom: 8px #eaa973 solid;
+    border-bottom: 6px #eaa973 solid;
+    min-height: 100px !important;
 }
 
+.navbar li a:hover {
+    background-color: transparent !important;
+    color: #000000 !important; 
+}
+
+.navbar-brand:hover {
+    background-color: transparent !important;
+    color: #000000 !important;
+}
+
+.navbar li.active a {
+    background-color: #b84e39 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.navbar-nav a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.navbar-brand:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.bs-sidebar a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Enhanced site name styling */
 .navbar-brand {
     font-weight: bold !important;
+    color: #ffffff !important;  /* White text - change as needed */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2) !important;  /* Subtle shadow */
+    letter-spacing: 1px !important;  /* Slight spacing between letters */
 }
 
 .navbar-nav > li > a {
     font-weight: bold !important;
+    border-radius: 40px !important;
 }
 
 .bs-sidebar li a {
@@ -22,7 +62,7 @@
 
 .bs-sidebar li.active a {
     background-color: #f0f0f0 !important;
-    color: #ff6600 !important;
+    color: #000000 !important;
     font-weight: bold !important;
 }
 
@@ -71,6 +111,12 @@ div a:hover i.ai-lattes {
 .col-md-3, .col-md-9 {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-top: 90px !important;
+}
+
+/* Target the sidebar navigation */
+.bs-sidebar {
+    margin-top: 90px !important;
 }
 
 /* Make the overall container wider to use more screen space */
@@ -78,5 +124,40 @@ div a:hover i.ai-lattes {
     max-width: 100% !important;  /* Use 95% of screen width */
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+/* Ensure all navbar elements are vertically centered */
+.navbar .container {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 100px;  /* Adjust based on your logo size */
+}
+
+/* Remove default navbar styling that might interfere */
+.navbar-header {
+    float: none !important;
+}
+
+/* Align navigation links vertically */
+.navbar-nav > li > a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 60px !important;
+}
+
+/* For mobile responsive behavior */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+}
+
+/* Add spacing between logo and site name */
+.navbar .container > div:first-child {
+    margin-right: 30px !important;  /* Space after logo */
+}
+
+.navbar .container > div:nth-child(2) {
+    margin-right: 30px !important;  /* Space after site name */
 }
 
