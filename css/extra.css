@@ -149,13 +149,15 @@ a[href^="http"]:hover {
 
 div a i.fa-globe,
 div a i.ai-google-scholar,
-div a i.ai-lattes {
+div a i.ai-lattes,
+div a i.fa-envelope-o {
     color: #b84e39;
 }
 
 div a:hover i.fa-globe,
 div a:hover i.ai-google-scholar,
-div a:hover i.ai-lattes {
+div a:hover i.ai-lattes,
+div a:hover i.fa-envelope-o {
     color: #eaa973 !important;
 }
 
