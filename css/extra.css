@@ -224,3 +224,7 @@ div a:hover i.fa-envelope-o {
     margin-right: 30px !important;  /* Space after site name */
 }
 
+tbody td {
+  vertical-align: middle !important;
+}
+
