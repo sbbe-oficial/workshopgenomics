@@ -102,9 +102,9 @@ a[href^="http"]:focus {
 /* Enhanced site name styling */
 .navbar-brand {
     font-weight: bold !important;
-    color: #ffffff !important;  /* White text - change as needed */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2) !important;  /* Subtle shadow */
-    letter-spacing: 1px !important;  /* Slight spacing between letters */
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2) !important;
+    letter-spacing: 1px !important;
 }
 
 .navbar-nav > li > a {
@@ -184,7 +184,7 @@ div a:hover i.fa-envelope-o {
 
 /* Make the overall container wider to use more screen space */
 .container {
-    max-width: 100% !important;  /* Use 95% of screen width */
+    max-width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
@@ -193,7 +193,7 @@ div a:hover i.fa-envelope-o {
 .navbar .container {
     display: flex !important;
     align-items: center !important;
-    min-height: 100px;  /* Adjust based on your logo size */
+    min-height: 100px;
 }
 
 /* Remove default navbar styling that might interfere */
@@ -208,23 +208,88 @@ div a:hover i.fa-envelope-o {
     line-height: 60px !important;
 }
 
-/* For mobile responsive behavior */
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-wrap: wrap;
-    }
-}
-
 /* Add spacing between logo and site name */
 .navbar .container > div:first-child {
-    margin-right: 30px !important;  /* Space after logo */
+    margin-right: 30px !important;
 }
 
 .navbar .container > div:nth-child(2) {
-    margin-right: 30px !important;  /* Space after site name */
+    margin-right: 30px !important;
 }
 
 tbody td {
-  vertical-align: middle !important;
+    vertical-align: middle !important;
 }
 
+/* ============================================ */
+/* ADD THESE LINES TO FIX MOBILE (your original styles are untouched above) */
+/* ============================================ */
+
+/* Fix mobile navbar toggle - restore Cinder's default behavior */
+@media (max-width: 768px) {
+    /* Undo the forced flex layout on mobile */
+    .navbar .container {
+        flex-wrap: wrap !important;
+    }
+    
+    /* Restore normal navbar header behavior */
+    .navbar-header {
+        float: left !important;
+    }
+    
+    /* Fix the collapsed menu */
+    .navbar-collapse {
+        width: 100% !important;
+    }
+    
+    /* Remove fixed line-height on mobile so links wrap naturally */
+    .navbar-nav > li > a {
+        line-height: normal !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    /* Reduce fixed heights on mobile */
+    .navbar {
+        min-height: auto !important;
+    }
+    
+    .navbar .container {
+        min-height: auto !important;
+    }
+    
+    /* Fix column margins on mobile */
+    .col-md-3, .col-md-9 {
+        margin-top: 20px !important;
+    }
+    
+    .bs-sidebar {
+        margin-top: 20px !important;
+    }
+    
+    /* Smaller headings on mobile */
+    h1 {
+        font-size: 36px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    h2 {
+        font-size: 28px !important;
+        padding-bottom: 15px !important;
+    }
+    
+    /* Fix container padding on mobile so content doesn't touch edges */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Keep the spacing between logo and site name, but make it smaller */
+    .navbar .container > div:first-child {
+        margin-right: 15px !important;
+    }
+    
+    .navbar .container > div:nth-child(2) {
+        margin-right: 15px !important;
+    }
+}
