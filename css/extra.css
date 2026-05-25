@@ -28,26 +28,21 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Barlow', serif;
 }
 
-
-/* Site name in navbar */
 .navbar-brand {
     font-family: 'Barlow', serif !important;
     font-weight: 700 !important;
 }
 
-/* Main navigation menu items */
 .navbar-nav > li > a {
     font-family: 'Barlow', serif !important;
     font-weight: 500 !important;
 }
 
-/* Sidebar navigation */
 .bs-sidebar li a {
     font-family: 'Barlow', serif !important;
     font-weight: 500 !important;
 }
 
-/* Sidebar headings (if any) */
 .bs-sidebar .nav > li > a {
     font-family: 'Barlow', serif !important;
 }
@@ -99,7 +94,6 @@ a[href^="http"]:focus {
     background-color: transparent !important;
 }
 
-/* Enhanced site name styling */
 .navbar-brand {
     font-weight: bold !important;
     color: #ffffff !important;
@@ -165,7 +159,6 @@ div a:hover i.fa-envelope-o {
     color: #eaa973 !important;
 }
 
-/* Remove all gaps between columns and edges */
 .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -177,38 +170,55 @@ div a:hover i.fa-envelope-o {
     margin-top: 90px !important;
 }
 
-/* Target the sidebar navigation */
 .bs-sidebar {
     margin-top: 90px !important;
 }
 
-/* Make the overall container wider to use more screen space */
 .container {
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 1230px !important;  /* Base max width */
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-/* Ensure all navbar elements are vertically centered */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .container {
+        max-width: 95% !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px !important;
+    }
+}
+
 .navbar .container {
     display: flex !important;
     align-items: center !important;
     min-height: 100px;
 }
 
-/* Remove default navbar styling that might interfere */
 .navbar-header {
     float: none !important;
 }
 
-/* Align navigation links vertically */
 .navbar-nav > li > a {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     line-height: 60px !important;
 }
 
-/* Add spacing between logo and site name */
 .navbar .container > div:first-child {
     margin-right: 30px !important;
 }
@@ -221,35 +231,25 @@ tbody td {
     vertical-align: middle !important;
 }
 
-/* ============================================ */
-/* ADD THESE LINES TO FIX MOBILE (your original styles are untouched above) */
-/* ============================================ */
-
-/* Fix mobile navbar toggle - restore Cinder's default behavior */
 @media (max-width: 768px) {
-    /* Undo the forced flex layout on mobile */
     .navbar .container {
         flex-wrap: wrap !important;
     }
     
-    /* Restore normal navbar header behavior */
     .navbar-header {
         float: left !important;
     }
     
-    /* Fix the collapsed menu */
     .navbar-collapse {
         width: 100% !important;
     }
     
-    /* Remove fixed line-height on mobile so links wrap naturally */
     .navbar-nav > li > a {
         line-height: normal !important;
         padding-top: 10px !important;
         padding-bottom: 10px !important;
     }
     
-    /* Reduce fixed heights on mobile */
     .navbar {
         min-height: auto !important;
     }
@@ -258,7 +258,6 @@ tbody td {
         min-height: auto !important;
     }
     
-    /* Fix column margins on mobile */
     .col-md-3, .col-md-9 {
         margin-top: 20px !important;
     }
@@ -267,7 +266,6 @@ tbody td {
         margin-top: 20px !important;
     }
     
-    /* Smaller headings on mobile */
     h1 {
         font-size: 36px !important;
         padding-bottom: 20px !important;
@@ -278,15 +276,13 @@ tbody td {
         padding-bottom: 15px !important;
     }
     
-    /* Fix container padding on mobile so content doesn't touch edges */
     .container {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
     
-    /* Keep the spacing between logo and site name, but make it smaller */
     .navbar .container > div:first-child {
-        margin-right: 15px !important;
+        margin-right: 10px !important;
     }
     
     .navbar .container > div:nth-child(2) {
