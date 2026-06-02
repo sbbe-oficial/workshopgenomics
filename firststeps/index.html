@@ -147,9 +147,9 @@
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> é feito através do cadastro de uma chave pública do tipo RSA que vincula o seu computador ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> de maneira segura. ⚠️ <b>Atenção! É imprescindível realizar os passos abaixo usando o mesmo computador que será usado no dia do minicurso</b>.</p>
 
 <h4 id="gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</h4>
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Há diferenças importantes nos passos a serem seguidos dependendo se o seu computador roda o sistema operacional Linux ou macOS ou Windows:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Há diferenças importantes nos passos a serem seguidos dependendo se o seu computador roda o sistema operacional <a href="#linux-macos">Linux / macOS</a> ou <a href="#windows">Windows</a>:</p>
 
-<h5 id="linux-ou-macos">Linux ou macOS</h5>
+<h5 id="linux-macos">Linux / macOS</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Abra o terminal do Linux (Ctrl + Alt + T) ou macOS (Command + T). Quando o terminal abrir (uma tela preta), digite ou copie o seguinte comando no terminal para criar sua chave pública SSH do tipo RSA:</p>
 
 <div style="position: relative; margin: 20px 0;">
@@ -164,15 +164,16 @@
   <button id="copy-btn-2" onclick="copyToClipboard('ssh-path-2', 'copy-btn-2')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Para isso, você deve abrir a sua chave com o comando abaixo e copiar o conteúdo dela. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Preencha o <i>Cadastro do Aluno</i> usando o <b>mesmo email usado na inscrição do nosso minicurso</b> e selecione a turma <b>SBBE26</b>. Por fim, você deve abrir a sua chave que acabou de criar com o comando abaixo e copiar o seu conteúdo e colá-lo no campo <b>Chave Pública tipo RSA</b>. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-3" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">less ~/.ssh/ID_RSA_NPAD.pub</code></pre>
   <button id="copy-btn-3" onclick="copyToClipboard('ssh-path-3', 'copy-btn-3')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Prontinho! O seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, você receberá um email do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> pedindo para confirmar o seu cadastro. Isso feito, tudo pronto — seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
 
+<h5 id="windows">Windows</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"></p>
 
 <script>

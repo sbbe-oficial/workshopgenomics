@@ -324,3 +324,23 @@ pre code,
 pre code * {
     color: #000000 !important;
 }
+
+a {
+    color: #b84e39;
+    text-decoration: none;
+    font-weight: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #eaa973;
+}
+
+html {
+    scroll-padding-top: 55px;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 55px;
+}
