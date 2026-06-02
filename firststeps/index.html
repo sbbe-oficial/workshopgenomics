@@ -131,15 +131,85 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#primeiros-passos">Primeiros Passos 🐤</a></li>
-            <li class="second-level"><a href="#introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</a></li>
+            <li class="second-level"><a href="#ganhando-acesso-ao-npadufrn">Ganhando Acesso ao NPAD/UFRN</a></li>
                 
+                <li class="third-level"><a href="#gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="primeiros-passos">Primeiros Passos 🐤</h1>
-<h2 id="introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</h2>
-<p><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExamczcW0xeGx1MTBkMzYyOXF1bnM0MnZodG45dm9zMXR6end6dm00biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ROcSJHrOhhBkc/giphy.gif" alt="Animation description" width="200"></p></div>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Sejam bem-vindos ao nosso minicurso <b>Introdução à Análise de Dados Genômicos</b>! Neste minicurso, tentaremos transmitir um pouco da <i>rotina de trabalho</i> quando se está analisando dados genômicos. Esses dados são geralmente bem pesados e, portanto, de grande demanda computacional. Assim, comumente se faz uso de um <a href="https://pt.wikipedia.org/wiki/Computa%C3%A7%C3%A3o_de_alto_desempenho" target="_blank">Núcleo de Computação de Alto Desempenho</a> para facilitar e, por vezes, permitir esse tipo de análise. Como esses núcleos computacionais armazenam importantes dados científicos, é preciso garantir que todos com acesso a tais núcleos estejam devidamente cadastrados, garantindo assim <i>a boa segurança dos dados armazenados</i>. Ademais, visto que geralmente o usuário se encontra a quilômetros e quilômetros de distância da máquina utilizada, precisamos fazer essa comunicação da forma mais simples possível — sem ícones, sem janelas e sem <i>clicks</i>! Tal comunicação é realizada fazendo uso de uma linguagem computacional bem simples conhecida como <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank"><b>B</b>ourne-<b>A</b>gain <b>SH</b>ell</a>, ou somente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> para os mais íntimos.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Caso você nunca tenha ouvido falar em núcleos computacionais e linguagens computacionais básicas, <i>não se apoquente!</i> O nosso minicurso é mesmo desenhado para introduzir a fundamentação teórica como também dar uma ideia da parte prática por detrás das análises genômicas. Para dar um gostinho de como é colocar as mãos na massa, nós vamos fazer uso do <a href="https://npad.ufrn.br/" target="_blank">Núcleo de Processamento de Alto Desempenho</a> (<a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>) — um supercomputador que está fisicamente localizado em <a href="https://pt.wikipedia.org/wiki/Natal_(Rio_Grande_do_Norte)" target="_blank">Natal-RN</a>.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Portanto, para termos certeza de que tudo irá fluir bem no dia do nosso encontro, precisamos que todos os participantes obtenham acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> <i>antes do início do minicurso</i>. Assim, descrevemos a seguir como conseguir esse acesso. Para os marinheiros de primeira viagem a coisa pode parecer um tanto intimidadora, mas garantimos que é bem mais simples do que parece — é só ir pegar um ☕ ou 🍵 e seguir o nosso passo a passo abaixo. Para aqueles que preferirem, podem alternativamente seguir o <a href="https://npad.ufrn.br/tutorials/beginner/introduction_part_1/" target="_blank">tutorial do NPAD/UFRN</a>.</p>
+
+<h3 id="ganhando-acesso-ao-npadufrn">Ganhando Acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h3>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> é feito através do cadastro de uma chave pública do tipo RSA que vincula o seu computador ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> de maneira segura. ⚠️ <b>Atenção! É imprescindível realizar os passos abaixo usando o mesmo computador que será usado no dia do minicurso</b>.</p>
+
+<h4 id="gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Há diferenças importantes nos passos a serem seguidos dependendo se o seu computador roda o sistema operacional Linux ou macOS ou Windows:</p>
+
+<h5 id="linux-ou-macos">Linux ou macOS</h5>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Abra o terminal do Linux (Ctrl + Alt + T) ou macOS (Command + T). Quando o terminal abrir (uma tela preta), digite ou copie o seguinte comando no terminal para criar sua chave pública SSH do tipo RSA:</p>
+
+<div style="position: relative; margin: 20px 0;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-1" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cd ~; ssh-keygen -t rsa -f ~/.ssh/ID_RSA_NPAD</code></pre>
+  <button id="copy-btn-1" onclick="copyToClipboard('ssh-path-1', 'copy-btn-1')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Você deverá digitar uma senha para a sua chave, apertar enter e depois repetir a mesma senha. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b> Isso feito, a sua chave terá sido criada e estará armazenada em:</p>
+
+<div style="position: relative; margin: 20px 0;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-2" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">~/.ssh/ID_RSA_NPAD.pub</code></pre>
+  <button id="copy-btn-2" onclick="copyToClipboard('ssh-path-2', 'copy-btn-2')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Para isso, você deve abrir a sua chave com o comando abaixo e copiar o conteúdo dela. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-3" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">less ~/.ssh/ID_RSA_NPAD.pub</code></pre>
+  <button id="copy-btn-3" onclick="copyToClipboard('ssh-path-3', 'copy-btn-3')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Prontinho! O seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"></p>
+
+<script>
+function copyToClipboard(codeId, buttonId) {
+  const codeElement = document.getElementById(codeId);
+  const textToCopy = codeElement.innerText;
+  const button = document.getElementById(buttonId);
+
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    const originalText = button.innerHTML;
+    const originalColor = button.style.backgroundColor;
+
+    button.innerHTML = '✅ Copiado!';
+    button.style.backgroundColor = '#eaa973';
+
+    setTimeout(() => {
+      button.innerHTML = originalText;
+      button.style.backgroundColor = originalColor;
+    }, 2000);
+  }).catch(() => {
+    const textarea = document.createElement('textarea');
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    button.innerHTML = '✅ Copiado!';
+    button.style.backgroundColor = '#eaa973';
+
+    setTimeout(() => {
+      button.innerHTML = '📋 Copiar';
+      button.style.backgroundColor = '#b84e39';
+    }, 2000);
+  });
+}
+</script></div>
         
         
     </div>
@@ -150,7 +220,14 @@
 <hr>
 <p>
     
-    <small>Desenvolvido por <a href="https://g-pacheco.github.io/" target="_blank"><b>George Pacheco</b></a> com <a href="https://www.mkdocs.org/" target="_blank"><b>MkDocs</b></a>.</small>
+    <small>
+        Desenvolvido por <a href="https://g-pacheco.github.io/" target="_blank"><b>George Pacheco</b></a> com <a href="https://www.mkdocs.org/" target="_blank"><b>MkDocs</b></a>.
+        <br>
+        — © Todos os Direitos Reservados —
+        <br>
+        Jun 02, 2026 ⌛
+
+    </small>
 </p>
 
       </footer>

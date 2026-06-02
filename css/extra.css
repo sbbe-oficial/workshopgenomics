@@ -133,6 +133,20 @@ h2 {
 
 h3 {
     font-weight: bold !important;
+    padding-top: 20px !important;
+}
+
+h4 {
+    font-style: normal !important;
+    font-weight: bold !important;
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+}
+
+h5 {
+    font-weight: bold !important;
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
 }
 
 a[href^="http"] {
@@ -288,4 +302,25 @@ tbody td {
     .navbar .container > div:nth-child(2) {
         margin-right: 15px !important;
     }
+}
+
+code,
+.md-typeset code,
+.highlight .err,
+code span {
+    color: #000000 !important;
+}
+
+.language-bash .err,
+.language-bash .k,
+.language-bash .o,
+.language-bash .s,
+.language-bash .bp,
+.language-bash .c1 {
+    color: inherit !important;
+}
+
+pre code,
+pre code * {
+    color: #000000 !important;
 }
