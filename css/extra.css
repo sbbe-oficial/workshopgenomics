@@ -307,8 +307,11 @@ tbody td {
 code,
 .md-typeset code,
 .highlight .err,
-code span {
+code span:not([style*="color"]),
+pre code:not([style*="color"]),
+pre code *:not([style*="color"]) {
     color: #000000 !important;
+    font-weight: bold !important;
 }
 
 .language-bash .err,
@@ -318,11 +321,13 @@ code span {
 .language-bash .bp,
 .language-bash .c1 {
     color: inherit !important;
+    font-weight: bold !important;
 }
 
-pre code,
-pre code * {
-    color: #000000 !important;
+/* Only apply black to elements without inline color styles */
+pre code *:not([style*="color"]),
+.highlight *:not([style*="color"]) {
+    font-weight: bold !important;
 }
 
 a {
@@ -343,4 +348,30 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 55px;
+}
+
+body.homepage .bs-sidebar {
+    display: none;
+}
+
+body.homepage .col-md-9 {
+    width: 100%;
+}
+
+.homepage .col-md-9 {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.homepage .bs-sidebar {
+    display: none;
+}
+
+.homepage pre,
+.homepage code,
+.homepage ul,
+.homepage ol {
+    text-align: left;
 }
