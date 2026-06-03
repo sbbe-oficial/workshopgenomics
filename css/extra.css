@@ -350,28 +350,31 @@ h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 55px;
 }
 
-body.homepage .bs-sidebar {
-    display: none;
+.bs-sidebar {
+    background-color: #fcfdff !important;
+    border: 1px solid #eaa973 !important;
+    border-radius: 8px !important;
 }
 
-body.homepage .col-md-9 {
-    width: 100%;
+.bs-sidenav .active {
+    border-right: none !important;
+    border-left: none !important;
 }
 
-.homepage .col-md-9 {
-    width: 100%;
-    float: none;
-    margin: 0 auto;
-    text-align: center;
+.bs-sidebar .active > a {
+    border-right: none !important;
+    border-left: none !important;
 }
 
-.homepage .bs-sidebar {
-    display: none;
+.bs-sidebar li,
+.bs-sidebar .active,
+.bs-sidebar a {
+    border-right: none !important;
+    border-left: none !important;
 }
 
-.homepage pre,
-.homepage code,
-.homepage ul,
-.homepage ol {
-    text-align: left;
+hr {
+    border-top: 1.5px solid #b84e39 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
