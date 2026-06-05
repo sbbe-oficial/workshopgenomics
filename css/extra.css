@@ -391,3 +391,11 @@ hr {
     margin-top: 10px !important;
     margin-bottom: 10px !important;
 }
+
+.custom-list li {
+  padding: 15px 0 8px 15px;
+}
+
+.custom-list {
+  padding: 15px;
+}
