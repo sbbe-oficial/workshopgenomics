@@ -149,24 +149,24 @@
 <h4 id="gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</h4>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Há diferenças importantes nos passos a serem seguidos dependendo se o seu computador roda o sistema operacional. Portanto, siga os passos abaixo a depender do seu sistema: <span style="color: #b84e39;">Windows</span> (<span style="color: #b84e39; font-weight: bold;">Passos 01 — 04</span>) ou <span style="color: #b84e39;">Linux</span> / <span style="color: #b84e39;">macOS</span> (<span style="color: #b84e39; font-weight: bold;">Passos 02 — 04</span>).</p>
 
-<h5 id="passo-01">&gt; Passo 01</h5>
+<h5 id="passo-01">Passo 01</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"> Infelizmente, o sistema operacional <a href="#windows">Windows</a> não dispõe de um terminal próprio. Mas podemos resolver isso facilmente — só precisamos de um programinha que emule o terminal. Existem algumas opções, mas a que recomendamos é o <a href="https://mobaxterm.mobatek.net/" target="_blank">MobaXterm</a> que ainda conta com uma versão portátil (que não precisa ser instalada 😀). Você pode baixar essa versão <a href="https://download.mobatek.net/2632026040882303/MobaXterm_Portable_v26.3.zip" target="_blank">aqui</a>. Feito isso, mova o arquivo baixado para um local de fácil acesso e descomprima-o. Depois, é só abrir o arquivo <b>MobaXterm_Personal_26.3</b>. Dentro do programa, aperte em <b>Start local terminal</b> para abrir uma janela de terminal (uma janela preta).</p>
 
-<h5 id="passo-02">&gt; Passo 02</h5>
+<h5 id="passo-02">Passo 02</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"> Para criarmos a chave, precisamos copiar e colar o comando abaixo em uma nova janela de terminal. Assim, abra uma nova janela de terminal a depender do seu sistema operacional:</p>
 <ul class="custom-list_2">
 <li>no <span style="color: #b84e39;">Windows</span> ver <a href="#passo-01">Passo 01</a>;</li>
 <li>no <span style="color: #b84e39;">Linux</span> aperte <b>Ctrl + Alt + T</b>;</li>
 <li>e no <span style="color: #b84e39;">macOS</span> abra a barra de burcas apertando <b>Command + Espaço</b> e no <b>Campo de Busca</b> digite <b>terminal</b> e aperte <b>Enter</b>.</li>
 </ul>
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"> Nessa nova janela de terminal, cole o comando abaixo e aperte <b>Enter</b>. Você deverá digitar uma senha para a sua chave, apertar <b>Enter</b> e depois repetir a mesma senha. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b> Isso feito, a sua chave terá sido criada.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"> Nessa nova janela de terminal, cole o comando abaixo e aperte <b>Enter</b>. Você deverá digitar uma senha para a sua chave, apertar <b>Enter</b> e depois repetir a mesma senha. Isso feito, a sua chave terá sido criada. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b></p>
 
 <div style="position: relative; margin: 20px 0;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-5" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir ~/.ssh_SSBE26; ssh-keygen -t rsa -f ~/.ssh_SSBE26/ID_NPAD</code></pre>
   <button id="copy-btn-5" onclick="copyToClipboard('ssh-path-5', 'copy-btn-5')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<h5 id="passo-03">&gt; Passo 03</h5>
+<h5 id="passo-03">Passo 03</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Preencha o <i>Cadastro do Aluno</i> usando o <b>mesmo email usado na inscrição do nosso minicurso</b> e selecione a turma <b>SBBE26</b>. Por fim, você deve abrir a sua chave que acabou de criar com o comando abaixo, copiar o seu conteúdo e colá-lo no campo <b>Chave Pública tipo RSA</b>. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
 
 <div style="position: relative; margin: 20px 0px;">
@@ -174,7 +174,7 @@
   <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<h5 id="passo-04">&gt; Passo 04</h5>
+<h5 id="passo-04">Passo 04</h5>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, você receberá um email do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> pedindo para confirmar o seu cadastro. Isso feito, você receberá um email com o seu <span style="color: #b84e39; font-weight: bold;">usuário</span>. Substitua no comando abaixo o <span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO</span> pelo seu <span style="color: #b84e39; font-weight: bold;">Usuário</span> recebido nesse email. Copie o comando com com essa alteração e cole-o no terminal do <a href="https://mobaxterm.mobatek.net/" target="_blank">MobaXterm</a> e aperte <b>Enter</b>. Digite a senha cadastrada e tudo pronto — o seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
 
 <div style="position: relative; margin: 20px 0px;">
@@ -234,7 +234,7 @@ function copyToClipboard(codeId, buttonId) {
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jun 09, 2026 ⌛
+        Jun 10, 2026 ⌛
 
     </small>
 </p>

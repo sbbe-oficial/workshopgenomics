@@ -133,12 +133,94 @@
         <li class="first-level active"><a href="#maos-na-massa">Maõs na Massa 🍝</a></li>
             <li class="second-level"><a href="#introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</a></li>
                 
+                <li class="third-level"><a href="#pequenas-dicas">Pequenas Dicas</a></li>
+            <li class="second-level"><a href="#fazer-refazer-desfazer-fazer-novamente-salvar-tudo">Fazer. Refazer. Desfazer. Fazer Novamente. SALVAR TUDO! 🚨</a></li>
+                
+                <li class="third-level"><a href="#criando-uma-conta-no-github">Criando Uma Conta no GitHub</a></li>
+                <li class="third-level"><a href="#ligando-o-npadufrn-ao-github-uma-conexao-necessaria">Ligando o NPAD/UFRN ao GitHub — Uma Conexão Necessária</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="maos-na-massa">Maõs na Massa 🍝</h1>
-<h2 id="introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</h2></div>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Como mencionano na nossa sessão teórica mais cedo, a comunicação com um <a href="https://pt.wikipedia.org/wiki/Computa%C3%A7%C3%A3o_de_alto_desempenho" target="_blank">Núcleo de Computação de Alto Desempenho</a> como o <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> se dá através de comandos simples dentro do ambiente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> executados no <a href="https://pt.wikipedia.org/wiki/Interface_de_linha_de_comandos" target="_blank">terminal</a>. Vamos aqui passar por alguns desses comandos e entender como podemos usá-los em conjunto para criamos frases (linhas de comando) para executar tarefas levemente mais complexas.</p>
+
+<h3 id="introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</h3>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Como é comum no aprendizado de uma nova linguagem, é fundamental conhecer bem o "alfabeto" em questão antes de se tentar escrever as primeiras sentenças. Abaixo estão listados alguns comandos bastante ultilizados no dentro do ambiente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> e alguns exemplos de como podemos os usar em conjunto:</p>
+
+<ul class="custom-list_3_first">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">~</code>O diterório raiz do sistema.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">.</code>O presente diretório.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">..</code>Volta um nível para trás partindo do presente diretório.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">mkdir</code>Cria um novo diretório.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">cd</code>Entra em um diretório.</li>
+</ul>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir MinhaPasta</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">pwd</code>Imprime o caminho completo do diretório atual.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">rm</code>Remove um ficheiro.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">;</code>Passa para o próximo comando.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">head</code>Ver o começo de um arquivo de texto.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">></code>Salva o que seria mostrado na tela (ecrã) em um ficheiro.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">|</code>Passa o que foi processado para o próximo comando.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">cat</code>Abre na tela (ecrã) um arquivo de texto.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">zcat</code>Abre na tela (ecrã) um arquivo de texto compactado.</li>
+</ul>
+
+<h5 id="pequenas-dicas">Pequenas Dicas</h5>
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + a</code>Move o cursor para o começo da linha.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + e</code>Move o cursor para o final da linha.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + k</code>Apaga do cursor até o final da linha.</li>
+</ul>
+
+<h3 id="fazer-refazer-desfazer-fazer-novamente-salvar-tudo">Fazer. Refazer. Desfazer. Fazer Novamente. SALVAR TUDO! 🚨</h3>
+<h4 id="criando-uma-conta-no-github">Criando Uma Conta no <a href="https://github.com/" target="_blank">GitHub</a></h4>
+<h4 id="ligando-o-npadufrn-ao-github-uma-conexao-necessaria">Ligando o <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> ao <a href="https://github.com/" target="_blank">GitHub</a> — Uma Conexão Necessária</h4></div>
         
         
     </div>
@@ -154,7 +236,7 @@
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jun 09, 2026 ⌛
+        Jun 10, 2026 ⌛
 
     </small>
 </p>
