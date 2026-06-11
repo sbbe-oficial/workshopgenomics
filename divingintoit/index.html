@@ -134,6 +134,8 @@
             <li class="second-level"><a href="#introducao-ao-ambiente-unix">Introdução ao Ambiente UNIX</a></li>
                 
                 <li class="third-level"><a href="#pequenas-dicas">Pequenas Dicas</a></li>
+            <li class="second-level"><a href="#sistema-de-filas-de-trabalho">Sistema de Filas de Trabalho</a></li>
+                
             <li class="second-level"><a href="#fazer-refazer-desfazer-fazer-novamente-salvar-tudo">Fazer. Refazer. Desfazer. Fazer Novamente. SALVAR TUDO! 🚨</a></li>
                 
                 <li class="third-level"><a href="#criando-uma-conta-no-github">Criando Uma Conta no GitHub</a></li>
@@ -149,75 +151,169 @@
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Como é comum no aprendizado de uma nova linguagem, é fundamental conhecer bem o "alfabeto" em questão antes de se tentar escrever as primeiras sentenças. Abaixo estão listados alguns comandos bastante ultilizados no dentro do ambiente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> e alguns exemplos de como podemos os usar em conjunto:</p>
 
 <ul class="custom-list_3_first">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">~</code>O diterório raiz do sistema.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">~</code>O diterório raiz do sistema.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">.</code>O presente diretório.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">.</code>O presente diretório.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">..</code>Volta um nível para trás partindo do presente diretório.</li>
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">..</code>Volta um nível para trás partindo do presente diretório.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">mkdir</code>Cria um novo diretório.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">mkdir</code>Cria um novo diretório.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">cd</code>Entra em um diretório.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">cd</code>Entra em um diretório.</li>
 </ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">ls</code>Lista todos os componentes de um dado diretório.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">pwd</code>Imprime o caminho completo do diretório atual.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">rm</code>Remove um ficheiro.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">;</code>Passa para o próximo comando.</li>
+</ul>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Usando algumas das "palavras" acima, poderíamos escrever um comando dizendo <i>Crie uma pasta chamada MyFolder</i>:</p>
 
 <div style="position: relative; margin: 20px 0px;">
-  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir MinhaPasta</code></pre>
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir MyFolder</code></pre>
   <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos checar que essa pasta foi realmente criada do modo desejado:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos também entrar nessa pasta criada:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cd MyFolder</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos sair desse diretório e voltar ao diretório original:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cd ..</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, podemos deletar a pasta criada:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">rm -rf MyFolder</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos também fazer mais de um passo de uma só vez colocando comandos distintos em uma mesma linha:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir MyFolder; cd MyFolder; pwd</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Mais alguns comandos:</p>
+
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">pwd</code>Imprime o caminho completo do diretório atual.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">nano</code>Cria um arquivo de texto.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">rm</code>Remove um ficheiro.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">gzip</code>Comprime um arquivo.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">;</code>Passa para o próximo comando.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">cat</code>Abre na tela (ecrã) um arquivo de texto.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">head</code>Ver o começo de um arquivo de texto.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">zcat</code>Abre na tela (ecrã) um arquivo de texto compactado.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">></code>Salva o que seria mostrado na tela (ecrã) em um ficheiro.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">head</code>Ver o começo de um arquivo de texto.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">|</code>Passa o que foi processado para o próximo comando.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">></code>Salva o que seria mostrado na tela (ecrã) em um ficheiro.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">cat</code>Abre na tela (ecrã) um arquivo de texto.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">|</code>Passa o que foi processado para o próximo comando.</li>
 </ul>
 
-<ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">zcat</code>Abre na tela (ecrã) um arquivo de texto compactado.</li>
-</ul>
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Então, podemos criar um arquivo de texto chamado <i>Hello_10.txt</i> com o comando abaixo. Escreva <i>Hello!</i> em 10 linhas seguidas e aperte <b>control + o</b> para salvar e depois <b>Enter</b>. Depois, aperte <b>control + x</b> para sair do programa.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano Hello.txt</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Lembre-se que podemos confirmar que o arquivo foi realmete criado:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Aqui só temos 10 linhas, mas às vezes queremos ver apenas as primeiras linhas de um arquivo de milhões e milhões de linhas! Digamos que queremos ver as 5 primeiras linhas do nosso arquivo <i>Hello_10.txt</i>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 Hello_10.txt</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Podemos também criar um subarquivo com essas 5 primeiras linhas do <i>Hello_10.txt</i>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 Hello_10.txt > Hello_5.txt</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Podemos também comprimir um arquivo:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">gzip Hello_5.txt</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Vamos agora precisar de dois comandos para fazer um novo subarquivo porque arquivos comprimidos precisam de um tratamento especial:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">zcat Hello_5.txt.gz | head -n 3 > Hello_3.txt</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
 
 <h5 id="pequenas-dicas">Pequenas Dicas</h5>
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + a</code>Move o cursor para o começo da linha.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">control + a</code>Move o cursor para o começo da linha.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + e</code>Move o cursor para o final da linha.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">control + e</code>Move o cursor para o final da linha.</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold;; margin-right: 18px;">control + k</code>Apaga do cursor até o final da linha.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">control + k</code>Apaga do cursor até o final da linha.</li>
 </ul>
 
+<h3 id="sistema-de-filas-de-trabalho">Sistema de Filas de Trabalho</h3>
 <h3 id="fazer-refazer-desfazer-fazer-novamente-salvar-tudo">Fazer. Refazer. Desfazer. Fazer Novamente. SALVAR TUDO! 🚨</h3>
 <h4 id="criando-uma-conta-no-github">Criando Uma Conta no <a href="https://github.com/" target="_blank">GitHub</a></h4>
 <h4 id="ligando-o-npadufrn-ao-github-uma-conexao-necessaria">Ligando o <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> ao <a href="https://github.com/" target="_blank">GitHub</a> — Uma Conexão Necessária</h4></div>
@@ -236,7 +332,7 @@
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jun 10, 2026 ⌛
+        Jun 11, 2026 ⌛
 
     </small>
 </p>
