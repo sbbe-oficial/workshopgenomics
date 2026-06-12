@@ -152,6 +152,10 @@
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Como é comum no aprendizado de uma nova linguagem, é fundamental conhecer bem o "alfabeto" em questão antes de se tentar escrever as primeiras sentenças. Abaixo estão listados alguns comandos bastante ultilizados no dentro do ambiente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> e alguns exemplos de como podemos os usar em conjunto:</p>
 
 <ul class="custom-list_3_first">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">#</code>Indica que a linha é uma linha de comentário, portanto não lida.</li>
+</ul>
+
+<ul class="custom-list_3">
   <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">~</code>O diterório raiz do sistema.</li>
 </ul>
 
@@ -324,7 +328,7 @@
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-18" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">#!/bin/bash
 
-#SBATCH --partition=amd-512                 # Partição
+#SBATCH --partition=intel-128               # Partição
 #SBATCH --cpus-per-task=8                   # CPUs solicitados
 #SBATCH --hint=compute_bound                # Um processador por core
 #SBATCH --mail-type=ALL                     # Quando um e-mail deve ser enviado?
