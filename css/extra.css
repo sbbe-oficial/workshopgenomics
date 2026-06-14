@@ -432,3 +432,13 @@ hr {
   padding: 0px 0px 0px 10px;
 }
 
+.custom-list_3_last {
+  color: #000000 !important;
+  padding: 10px 10px 22px 14px;
+}
+
+.custom-list_3_last li {
+  color: #000000 !important;
+  padding: 0px 0px 0px 10px;
+}
+
