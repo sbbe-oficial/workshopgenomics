@@ -286,7 +286,7 @@
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Aqui só temos 10 linhas, mas às vezes queremos ver apenas as primeiras linhas de um arquivo de milhões e milhões de linhas! Digamos que queremos ver as 5 primeiras linhas do nosso arquivo <b>Hello_10.txt</b>:</p>
 
 <div style="position: relative; margin: 20px 0px;">
-  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-17" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 Hello_10.txt</code></pre>
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-17" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 fread</code></pre>
   <button id="copy-btn-17" onclick="copyToClipboard('ssh-path-17', 'copy-btn-17')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
@@ -396,10 +396,6 @@ ipyrad -p params-iptest.txt -s 1
   <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Description</code>Adicione uma pequena descrição do seu repositório. Mais uma vez, lembre-se que é bom ter uma descrição que seja de fácil entendimento por parte de possíveis visitantes.</li>
 </ul>
 
-<ul class="custom-list_3">
-  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Add README</code>Ligue essa opção para que o ficheiro <b>README.md</b> seja criado.</li>
-</ul>
-
 <h4 id="33-gerando-uma-chave-ssh-publica-no-npadufrn">3.3. Gerando uma chave SSH pública no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h4>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Você agora pode conectar a sua conta no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> ao seu <a href="https://github.com/" target="_blank">GitHub</a> também através de uma <a href="https://pt.wikipedia.org/wiki/RSA_(sistema_criptogr%C3%A1fico)" target="_blank">Chave Pública tipo RSA</a>. Para isso, primeiro crie uma chave na sua conta no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> usando o comando abaixo. Você deverá digitar uma senha para a sua chave, apertar <b>Enter</b> e depois repetir a mesma senha e apertar <b>Enter</b> outra vez. Isso feito, a sua chave terá sido criada. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b></p>
 </p>
@@ -443,7 +439,7 @@ ipyrad -p params-iptest.txt -s 1
 </div>
 
 <h4 id="34-npadufrn-github-uma-conexao-necessaria">3.4. <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> &lt;-&gt; <a href="https://github.com/" target="_blank">GitHub</a> — Uma Conexão Necessária</h4>
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Só nos resta agora configurar a sua conta no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> de forma tal que ela sempre use a sua conta no GitHub. Isso pode ser feito com o comando abaixo fazendo uso.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Só resta a você configurar a sua conta no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> de forma tal que ela sempre use a sua conta no <i>GitHub</i>. Isso pode ser feito com o comando abaixo fazendo uso.</p>
 
 <div style="position: relative; margin: 20px 0px;">
     <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-26" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git config --global user.name GITHUB-USERNAME; git config --global user.email EMAIL-CADASTRADO-NO-GITHUB</code></pre>
@@ -457,28 +453,35 @@ ipyrad -p params-iptest.txt -s 1
   <button id="copy-btn-27" onclick="copyToClipboard('ssh-path-27', 'copy-btn-27')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então, podemos fazer com que esse diretório seja capaz de ser conectato a um repositório:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então, você agora pode fazer com que esse diretório seja capaz de ser conectato a um repositório:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-28" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git init -b main</code></pre>
   <button id="copy-btn-28" onclick="copyToClipboard('ssh-path-28', 'copy-btn-28')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Daí podemos fazer a conexão de fato adicionando ao comando abaixo o seu <b>nome de usuário no GitHub</b> e o <b>nome do repositório</b> em questão:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Daí você pode fazer a conexão de fato adicionando ao comando abaixo o seu <b>nome de usuário no GitHub</b> e o <b>nome do repositório</b> em questão:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-29" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git remote add origin git@github.com:SEU-USERNAME-NO-GITHUB/NOME-DO-SEU-REPOSITÓRIO.git</code></pre>
   <button id="copy-btn-29" onclick="copyToClipboard('ssh-path-29', 'copy-btn-29')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora podemos atualizar o nosso repositório com o que tivermos nesse diretório sempre tomando nota da mudança em questão (<i>commit</i>). Primeiro, temos que adicionar as mudanças:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Você pode criar o seu primeiro arquivo dentro do seu repositório com o comando abaixo. Lembre-se que você deve apertar <b>control + o</b> seguido do <b>Enter</b> para salvar, e depois <b>control + x</b> para sair do programa <b>nano</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-30" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano README.md</code></pre>
+  <button id="copy-btn-30" onclick="copyToClipboard('ssh-path-30', 'copy-btn-30')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora você pode submeter ao <i>GitHub</i> as mudança feita localmente no nosso repositório. Primeiro, temos que adicionar as mudanças:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-30" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git add .</code></pre>
   <button id="copy-btn-30" onclick="copyToClipboard('ssh-path-30', 'copy-btn-30')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora podemos atualizar o nosso repositório com o que tivermos nesse diretório sempre tomando nota da mudança em questão (<i>commit</i>). Primeiro, temos que adicionar as mudanças:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então você pode adicionar uma nota (<i>commit</i>) a ser vinculada à mudança em questão:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-31" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git commit -m "COLOQUE-AQUI-UM-COMENTÁRIO-QUE-FAÇA-SENTIDO"</code></pre>
