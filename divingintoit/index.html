@@ -269,7 +269,7 @@
   <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">|</code>Passa o que foi processado para o próximo comando.</li>
 </ul>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então, podemos criar um arquivo de texto chamado <i>Hello_10.txt</i> com o comando abaixo. Escreva <i>Hello!</i> em 10 linhas seguidas e aperte <b>control + o</b> para salvar e depois <b>Enter</b>. Depois, aperte <b>control + x</b> para sair do programa.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então, podemos criar um arquivo de texto chamado <b>Hello_10.txt</b> com o comando abaixo. Escreva <i>Hello!</i> em 10 linhas seguidas e aperte <b>control + o</b> para salvar e depois <b>Enter</b>. Depois, aperte <b>control + x</b> para sair do programa.</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-15" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano Hello_10.txt</code></pre>
@@ -283,14 +283,14 @@
   <button id="copy-btn-16" onclick="copyToClipboard('ssh-path-16', 'copy-btn-16')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Aqui só temos 10 linhas, mas às vezes queremos ver apenas as primeiras linhas de um arquivo de milhões e milhões de linhas! Digamos que queremos ver as 5 primeiras linhas do nosso arquivo <i>Hello_10.txt</i>:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Aqui só temos 10 linhas, mas às vezes queremos ver apenas as primeiras linhas de um arquivo de milhões e milhões de linhas! Digamos que queremos ver as 5 primeiras linhas do nosso arquivo <b>Hello_10.txt</b>:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-17" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 Hello_10.txt</code></pre>
   <button id="copy-btn-17" onclick="copyToClipboard('ssh-path-17', 'copy-btn-17')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos também criar um subarquivo com essas 5 primeiras linhas do <i>Hello_10.txt</i>:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Podemos também criar um subarquivo com essas 5 primeiras linhas do <b>Hello_10.txt</b>:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-18" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 5 Hello_10.txt > Hello_05.txt</code></pre>
