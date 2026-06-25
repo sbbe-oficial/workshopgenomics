@@ -153,6 +153,10 @@
                 <li class="third-level"><a href="#46-criando-e-editanto-o-arquivo-de-parametros-da-analise">4.6. Criando e editanto o arquivo de parâmetros da análise</a></li>
                 <li class="third-level"><a href="#47-criando-o-arquivo-de-submissao-de-tarefas-no-npadufrn">4.7. Criando o arquivo de submissão de tarefas no NPAD/UFRN</a></li>
                 <li class="third-level"><a href="#48-passos-1-2-3-demultiplex-filtragem-e-mapeamento-de-loci-dentro-de-cada-individuo">4.8. Passos 1, 2, 3: Demultiplex, Filtragem e Mapeamento de loci dentro de cada indivíduo</a></li>
+                <li class="third-level"><a href="#49-verificando-os-resultados">4.9. Verificando os resultados</a></li>
+                <li class="third-level"><a href="#410-modificando-o-arquivo-de-submissao-de-tarefas">4.10. Modificando o arquivo de submissão de tarefas</a></li>
+                <li class="third-level"><a href="#411-passos-4-5-6-7-estimativa-de-heterozigosidade-e-erro-sequencia-de-consenso-mapeamento-e-alinhamento-dos-loci-entre-todos-os-individuos-e-formatacao-dos-arquivos-de-saida-output">4.11. Passos 4, 5, 6, 7: estimativa de heterozigosidade e erro, sequência de consenso, mapeamento e alinhamento dos loci entre todos os indivíduos e formatação dos arquivos de saída (output)</a></li>
+                <li class="third-level"><a href="#411-verificando-os-resultados-dos-passos-4-5-6-7">4.11. Verificando os resultados dos passos 4, 5, 6, 7</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -851,6 +855,278 @@ ipyrad -p params-tutorial.txt -c 8 -s 123</code></pre>
     <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-49" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat slurm-<span style="color: #b84e39;">XXXXXXX</span>.out</code></pre>
     <button id="copy-btn-49" onclick="copyToClipboard('ssh-path-49', 'copy-btn-49')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;"> -------------------------------------------------------------
+  ipyrad [v.0.9.108]
+  Interactive assembly and analysis of RAD-seq data
+ ------------------------------------------------------------- 
+  Parallel connection | r1i2n12.npad.internal: 8 cores
+
+  Step 1: Demultiplexing fastq data to Samples
+  [####################] 100% 0:00:03 | sorting reads          
+  [####################] 100% 0:00:00 | writing/compressing    
+
+  Step 2: Filtering and trimming reads
+  [####################] 100% 0:00:02 | processing reads     
+
+  Step 3: Clustering/Mapping reads within samples
+  [####################] 100% 0:00:00 | dereplicating          
+  [####################] 100% 0:00:00 | clustering/mapping     
+  [####################] 100% 0:00:01 | building clusters      
+  [####################] 100% 0:00:00 | chunking clusters      
+  [####################] 100% 0:00:05 | aligning clusters      
+  [####################] 100% 0:00:00 | concat clusters        
+  [####################] 100% 0:00:00 | calc cluster stats     
+  Parallel connection closed.
+</code></pre>
+</div>
+
+<h4 id="49-verificando-os-resultados">4.9. Verificando os resultados</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O resultado do último passo executado pode ser visulizado rapidamente com o argumento <b>-r</b> do Ipyrad.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-50" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ipyrad -p params-tutorial.txt -r</code></pre>
+    <button id="copy-btn-50" onclick="copyToClipboard('ssh-path-50', 'copy-btn-50')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">loading Assembly: tutorial
+  from saved path: ~/tutorial_ipyrad/tutorial.json
+
+Summary stats of Assembly tutorial
+------------------------------------------------
+      state  reads_raw  reads_passed_filter  clusters_total  clusters_hidepth
+1A_0      3      19862                19862            1000              1000
+1B_0      3      20043                20043            1000              1000
+1C_0      3      20136                20136            1000              1000
+1D_0      3      19966                19966            1000              1000
+2E_0      3      20017                20017            1000              1000
+2F_0      3      19933                19933            1000              1000
+2G_0      3      20030                20030            1000              1000
+2H_0      3      20199                20198            1000              1000
+3I_0      3      19885                19885            1000              1000
+3J_0      3      19822                19822            1000              1000
+3K_0      3      19965                19965            1000              1000
+3L_0      3      20008                20008            1000              1000
+
+
+Full stats files
+------------------------------------------------
+step 1: ./tutorial_fastqs/s1_demultiplex_stats.txt
+step 2: ./tutorial_edits/s2_rawedit_stats.txt
+step 3: ./tutorial_clust_0.85/s3_cluster_stats.txt
+step 4: None
+step 5: None
+step 6: None
+step 7: None
+</code></pre>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique os arquivos produzidos pelo passo 1 na pasta <b>tutorial_fastqs</b> com o comando <b>ls</b>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-51" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls tutorial_fastqs</code></pre>
+    <button id="copy-btn-51" onclick="copyToClipboard('ssh-path-51', 'copy-btn-51')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique os arquivos produzidos pelo passo 2 na pasta <b>tutorial_edits</b>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-52" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls tutorial_edits</code></pre>
+    <button id="copy-btn-52" onclick="copyToClipboard('ssh-path-52', 'copy-btn-52')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique os arquivos produzidos pelo passo 3 na pasta <b>tutorial_clust_0.85</b>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-53" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls tutorial_clust_0.85</code></pre>
+    <button id="copy-btn-53" onclick="copyToClipboard('ssh-path-53', 'copy-btn-53')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados após os passos 1, 2 e 3:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-54" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ./tutorial_fastqs/s1_demultiplex_stats.txt
+cat ./tutorial_edits/s2_rawedit_stats.txt
+cat ./tutorial_clust_0.85/s3_cluster_stats.txt</code></pre>
+  <button id="copy-btn-54" onclick="copyToClipboard('ssh-path-54', 'copy-btn-54')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, dê uma checada nos arquivos gerados na pasta <b>iptest_clust_0.85</b>, criada após o passo 3. Esse arquivo contém os clusters de sequências agrupadas (loci) pelo ipyrad dentro de cada indivíduo.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-55" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">gunzip -c tutorial_clust_0.85/1A_0.clustS.gz | head -n 28</code></pre>
+    <button id="copy-btn-55" onclick="copyToClipboard('ssh-path-55', 'copy-btn-55')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<h4 id="410-modificando-o-arquivo-de-submissao-de-tarefas">4.10. Modificando o arquivo de submissão de tarefas</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora vamos executar os próximos 4 passos da pipeline. Para isso, precisamos modificar o arquivo de submissão de tarefas <b>job.slurm.sh</b>, substituindo os passos <b>123</b> pelos passos <b>4567</b> no comando do ipyrad. Abra o arquivo novamente com o editor nano.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-55" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano job.slurm.sh</code></pre>
+    <button id="copy-btn-55" onclick="copyToClipboard('ssh-path-55', 'copy-btn-55')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue até o final do arquivo usando as setas do teclado e altere o comando do Ipyrad para: <b>ipyrad -p params-tutorial.txt -c 8 -s 4567</b>. Em seguida, salve e saia do nano pressionando <b>Ctrl + x</b>, depois <b>Y</b> e <b>Enter</b>. Seu script deve estar como mostrado abaixo se você o abrir usando o comando <b>cat job.slurm.sh</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">#!/bin/bash
+
+#SBATCH --partition=intel-128               # Partição
+#SBATCH --cpus-per-task=8                   # CPUs solicitados
+#SBATCH --hint=compute_bound                # Um processador por core
+#SBATCH --mail-type=ALL                     # Quando um e-mail deve ser enviado?
+#SBATCH --mail-user=SEU E-MAIL AQUI         # Qual e-mail deve ser usado?
+#SBATCH --time=0-1:0                        # Formato padrão: Dias-Horas:Minutos
+
+
+# Paralelização (OpenMP) parametros:
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_PROC_BIND=true
+
+# Rode abaixo o seu comando:
+
+eval "$(conda shell.bash hook)" # inclua esta linha antes executar o conda
+conda activate /home/sbbe26/conda/ipyrad # ative o ambiente onde o ipyrad foi instalado
+
+ipyrad -p params-tutorial.txt -c 8 -s 4567
+</code></pre>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora vamos enviar esse novo <i>job</i> ao SLURM. ⚠️ <b>Atenção!</b> Você só poderá submeter essa nova tarefa se a tarefa anterior tiver sido concluída com sucesso.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-56" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">sbatch job.slurm.sh</code></pre>
+    <button id="copy-btn-56" onclick="copyToClipboard('ssh-path-56', 'copy-btn-56')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<h4 id="411-passos-4-5-6-7-estimativa-de-heterozigosidade-e-erro-sequencia-de-consenso-mapeamento-e-alinhamento-dos-loci-entre-todos-os-individuos-e-formatacao-dos-arquivos-de-saida-output">4.11. Passos 4, 5, 6, 7: estimativa de heterozigosidade e erro, sequência de consenso, mapeamento e alinhamento dos loci entre todos os indivíduos e formatação dos arquivos de saída (output)</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Após o término da análise, vamos verificar o arquivo de saída produzido pelo script de submissão de tarefas. Substitua, <span style="font-weight: bold; color: #b84e39;">XXXXXXX</span> pelo número do segundo job que acabou de ser concluído.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-57" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat slurm-<span style="color: #b84e39;">XXXXXXX</span>.out</code></pre>
+    <button id="copy-btn-57" onclick="copyToClipboard('ssh-path-57', 'copy-btn-57')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O comando acima imprimirá na tela o resultado da execução do Ipyrad, como mostrado abaixo:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">loading Assembly: tutorial
+  from saved path: ~/tutorial_ipyrad/tutorial.json
+
+ -------------------------------------------------------------
+  ipyrad [v.0.9.108]
+  Interactive assembly and analysis of RAD-seq data
+ ------------------------------------------------------------- 
+  Parallel connection | r1i1n15.npad.internal: 8 cores
+
+  Step 4: Joint estimation of error rate and heterozygosity
+  [####################] 100% 0:00:06 | inferring [H, E]       
+
+  Step 5: Consensus base/allele calling 
+  Mean error  [0.00076 sd=0.00001]
+  Mean hetero [0.00192 sd=0.00012]
+  [####################] 100% 0:00:00 | calculating depths     
+  [####################] 100% 0:00:00 | chunking clusters      
+  [####################] 100% 0:00:05 | consens calling        
+  [####################] 100% 0:00:00 | indexing alleles       
+
+  Step 6: Clustering/Mapping across samples 
+  [####################] 100% 0:00:00 | concatenating inputs   
+  [####################] 100% 0:00:00 | clustering across    
+  [####################] 100% 0:00:00 | building clusters      
+  [####################] 100% 0:00:01 | aligning clusters      
+
+  Step 7: Filtering and formatting output files 
+  [####################] 100% 0:00:04 | applying filters       
+  [####################] 100% 0:00:01 | building arrays        
+  [####################] 100% 0:00:00 | writing conversions    
+  Parallel connection closed.
+</code></pre>
+</div>
+
+<h4 id="411-verificando-os-resultados-dos-passos-4-5-6-7">4.11. Verificando os resultados dos passos 4, 5, 6, 7</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O resultado do último passo pode ser visulizado com o argumento <b>-r</b> do Ipyrad. Certifique-se que o todos os passos tenhasm sido executados com sucesso.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-58" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ipyrad -p params-tutorial.txt -r</code></pre>
+    <button id="copy-btn-58" onclick="copyToClipboard('ssh-path-58', 'copy-btn-58')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">loading Assembly: tutorial
+  from saved path: ~/tutorial_ipyrad/tutorial.json
+
+Summary stats of Assembly tutorial
+------------------------------------------------
+      state  reads_raw  reads_passed_filter  ...  hetero_est  error_est  reads_consens
+1A_0      6      19862                19862  ...    0.001852   0.000758           1000
+1B_0      6      20043                20043  ...    0.001900   0.000752           1000
+1C_0      6      20136                20136  ...    0.002084   0.000745           1000
+1D_0      6      19966                19966  ...    0.001803   0.000754           1000
+2E_0      6      20017                20017  ...    0.001831   0.000765           1000
+2F_0      6      19933                19933  ...    0.001996   0.000755           1000
+2G_0      6      20030                20030  ...    0.001940   0.000763           1000
+2H_0      6      20199                20198  ...    0.001744   0.000752           1000
+3I_0      6      19885                19885  ...    0.001800   0.000758           1000
+3J_0      6      19822                19822  ...    0.001939   0.000782            999
+3K_0      6      19965                19965  ...    0.002092   0.000766           1000
+3L_0      6      20008                20008  ...    0.002042   0.000748           1000
+
+[12 rows x 8 columns]
+
+
+Full stats files
+------------------------------------------------
+step 1: ./tutorial_fastqs/s1_demultiplex_stats.txt
+step 2: ./tutorial_edits/s2_rawedit_stats.txt
+step 3: ./tutorial_clust_0.85/s3_cluster_stats.txt
+step 4: ./tutorial_clust_0.85/s4_joint_estimate.txt
+step 5: ./tutorial_consens/s5_consens_stats.txt
+step 6: ./tutorial_across/tutorial_clust_database.fa
+step 7: ./tutorial_outfiles/tutorial_stats.txt
+</code></pre>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados nos passos <b>4</b>, <b>5</b> e <b>7</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-59" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ./tutorial_clust_0.85/s4_joint_estimate.txt
+cat ./tutorial_consens/s5_consens_stats.txt
+cat ./tutorial_outfiles/tutorial_stats.txt</code></pre>
+  <button id="copy-btn-59" onclick="copyToClipboard('ssh-path-59', 'copy-btn-59')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">No passo <b>6</b> não há um arquivo de resumo, mas uma base de dados produzido após agrupar os loci entre todos os indivíduos que será filtrado posteriormente no passo 7. Verifique as primeiras 30 linhas dessa base de dados (loci recobertos). <b>Cuidado:</b> esse arquivo é bem grande, então não use o comando <b>cat</b>, o comando <b>head</b> é mais apropriado.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-60" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">head -n 30 tutorial_across/tutorial_clust_database.fa</code></pre>
+  <button id="copy-btn-60" onclick="copyToClipboard('ssh-path-60', 'copy-btn-60')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique os arquivos de saída produzidos pelo passo <b>7</b> na pasta <b>tutorial_outputs</b>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-61" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ls tutorial_outfiles/</code></pre>
+  <button id="copy-btn-61" onclick="copyToClipboard('ssh-path-61', 'copy-btn-61')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique um dos arquivos de saída com a formatação padrão do Ipyrad (<b>.loci</b>). A partir desse arquivo são gerados todos os outros formatos (<b>.phy</b>, <b>.snps</b>, ...). Use as setas do teclado  para navegar nesse arquivo. ⚠️ Pressione <b>q</b> para sair da tela.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-62" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">less tutorial_outfiles/tutorial.loci</code></pre>
+  <button id="copy-btn-62" onclick="copyToClipboard('ssh-path-62', 'copy-btn-62')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Para avaliar diferentes níveis de missing data nos seus dados, dê uma conferida no software <a href="https://github.com/brunoasm/matrix_condenser" target="_blank">matrix_condenser</a>.</p>
+
+<p><br></p>
+<p style="text-align: center; text-indent: 0px; margin: 0 0 0 0;"><b>~~~~~~~~~~~~~~~~~~~~~~~~ F I M ~~~~~~~~~~~~~~~~~~~~~~~~</b></p>
+
+<p><br></p>
+<p style="text-align: justify; text-indent: 0px; margin: 0 0 0 0;"><b>Parabéns! Você completou o processamento de dados RAD-seq no Ipyrad!</b> 🥳 🎈 🎉</p>
 
 <script>
 function copyToClipboard(codeId, buttonId) {
