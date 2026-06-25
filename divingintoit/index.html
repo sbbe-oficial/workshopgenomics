@@ -143,6 +143,16 @@
                 <li class="third-level"><a href="#32-criando-um-novo-repositorio">3.2. Criando Um Novo Repositório</a></li>
                 <li class="third-level"><a href="#33-gerando-uma-chave-ssh-publica-no-npadufrn">3.3. Gerando uma chave SSH pública no NPAD/UFRN</a></li>
                 <li class="third-level"><a href="#34-npadufrn-github-uma-conexao-necessaria">3.4. NPAD/UFRN &lt;-&gt; GitHub — Uma Conexão Necessária</a></li>
+            <li class="second-level"><a href="#4-processamento-de-dados-de-representacao-reduzida-do-genoma-radseq">4. Processamento de Dados de Representação Reduzida do Genoma (RADseq):</a></li>
+                
+                <li class="third-level"><a href="#41-tutorial-ipyrad">4.1. Tutorial Ipyrad</a></li>
+                <li class="third-level"><a href="#42-os-7-passos-basicos-da-pipeline-ipyrad">4.2. Os 7 passos básicos da pipeline Ipyrad</a></li>
+                <li class="third-level"><a href="#43-conectando-se-ao-nucleo-computacional-npadufrn">4.3. Conectando-se ao Núcleo Computacional NPAD/UFRN</a></li>
+                <li class="third-level"><a href="#44-obtendo-os-ficheiros-de-trabalho">4.4. Obtendo os ficheiros de trabalho</a></li>
+                <li class="third-level"><a href="#45-rodando-o-ipyrad-help">4.5. Rodando o ipyrad (--help)</a></li>
+                <li class="third-level"><a href="#46-criando-e-editanto-o-arquivo-de-parametros-da-analise">4.6. Criando e editanto o arquivo de parâmetros da análise</a></li>
+                <li class="third-level"><a href="#47-criando-o-arquivo-de-submissao-de-tarefas-no-npadufrn">4.7. Criando o arquivo de submissão de tarefas no NPAD/UFRN</a></li>
+                <li class="third-level"><a href="#48-passos-1-2-3-demultiplex-filtragem-e-mapeamento-de-loci-dentro-de-cada-individuo">4.8. Passos 1, 2, 3: Demultiplex, Filtragem e Mapeamento de loci dentro de cada indivíduo</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -358,7 +368,7 @@ ipyrad -p params-iptest.txt -s 1
 </code></pre>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Digamos que o conteúdo acima esteja salvo em o ficheiro chamado <b>MyFirstSubmission.sh</b>. Poderíamos então submeter esse trabalho com o comando abaixo:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 25 0 25 0;">Digamos que o conteúdo acima estivesse salvo em um ficheiro chamado <b>MyFirstSubmission.sh</b>. Poderíamos então submeter esse trabalho com o comando abaixo:</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-21" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">sbatch MyFirstSubmission.sh</code></pre>
@@ -484,7 +494,7 @@ ipyrad -p params-iptest.txt -s 1
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Então você pode adicionar uma nota (<i>commit</i>) a ser vinculada à mudança em questão:</p>
 
 <div style="position: relative; margin: 20px 0px;">
-  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-31" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git commit -m "COLOQUE-AQUI-UM-COMENTÁRIO-QUE-FAÇA-SENTIDO"</code></pre>
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-31" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git commit -m "<span style="color: #b84e39;">COLOQUE-AQUI-UM-COMENTÁRIO-QUE-FAÇA-SENTIDO</span>"</code></pre>
   <button id="copy-btn-31" onclick="copyToClipboard('ssh-path-31', 'copy-btn-31')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
@@ -495,7 +505,352 @@ ipyrad -p params-iptest.txt -s 1
   <button id="copy-btn-32" onclick="copyToClipboard('ssh-path-32', 'copy-btn-32')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
+<h3 id="4-processamento-de-dados-de-representacao-reduzida-do-genoma-radseq">4. Processamento de Dados de Representação Reduzida do Genoma (RADseq):</h3>
+<h4 id="41-tutorial-ipyrad">4.1. Tutorial <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a></h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a> é numa <i>pipeline</i> de análises desenvolvidas em Python para processar e analisar dados gerados por técnicas de representação reduzida do genoma, como RAD-seq e GBS. Essas técnicas utilizam <a href="https://pt.wikipedia.org/wiki/Enzima_de_restri%C3%A7%C3%A3o" target="_blank">enzimas de restrição</a> para cortar o DNA em sítios específicos e sequênciar pequenos fragmentos adjacentes a esses sítios de restrição, permitindo a amostragem de apenas uma pequena fração do genoma de muitos indivíduos. Durante o preparo das bibliotecas genômicas em laboratório, cada amostra recebe um adaptador contendo uma sequência única de nucleotídeos, como um "código de barra molecular" (<i>barcode</i>), que permite combinar múltiplas amostras em uma mesma biblioteca para sequênciamento simultâneo em plataformas de sequênciamento de nova geração, como a <a href="https://pt.wikipedia.org/wiki/Illumina" target="_blank">Illumina</a> por exemplo. A principal função do <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a> é identificar sequências homólogas em diferentes indivíduos (ou seja, correspondentes à mesma região genômica) e construir matrizes de dados genéticos que serão utilizadas em análises posteriores. Essas matrizes podem conter alinhamentos completos para cada locus (variando entre 50–300 bp dependendo do sequênciador utilizado) ou apenas os sítios polimórficos (SNPs, do inglês <i>Single Nucleotide Polymorphisms</i>).</p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Existem diversos programas disponíveis para processar dados de RAD-seq. Neste tutorial, utilizaremos o ipyrad devido à sua flexibilidade e capacidade de gerar arquivos de saída compatíveis com diversos programas comumente utilizados em estudos filogenéticos, filogeográficos, ou de genômica populacional. Além disso, você não precisa aprender a programar no Python para utilizá-lo, basta entender como usar seus comandos. Você pode aprender mais sobre o Ipyrad <a href="https://ipyrad.readthedocs.io/en/stable/1-ethos.html" target="_blank">aqui</a>.</p>
+
+<p><br></p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"><b>Referência do programa:</b></p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Eaton DAR, Overcast I. 2020. Ipyrad: Interactive assembly and analysis of RADseq datasets. <i>Bioinformatics</i>, 36(8): 2592–2594. <a href="https://doi.org/10.1093/bioinformatics/btz966" target="_blank">doi.org/10.1093/bioinformatics/btz966</a>.</p>
+
+<h4 id="42-os-7-passos-basicos-da-pipeline-ipyrad">4.2. Os 7 passos básicos da pipeline <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a></h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">De forma bem ampla, o que o ipyrad faz é processar as leituras brutas geradas pelo sequênciador de nova geração em arquivos de saída pré-formatados para análises posteriores. Os principais passos da pipeline são:</p>
+
+<div style="width: 949px; height: 949px; margin: -300 0 -350 0;">
+  <img src="../images/IpyradPipeline.jpeg" style="width: 100%; height: 100%; object-fit: contain;">
+</div>
+
+<ul class="custom-list_3_first">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 1.</code>Separação das sequências da biblioteca genômica por indivíduo via barcode.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 2.</code>Controle de qualidade e filtragem inicial das leituras brutas.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 3.</code>Agrupamento de sequências em loci dentro de cada indivíduo.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code id="ssh-path-5" style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 4.</code>Estimativa de heterozigosidade e taxa de erro de sequênciamento.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 5.</code>Construção das sequências consenso para cada locus com filtro de qualidade.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 6.</code>Identificação de loci homólogos entre os indivíduos e alinhamento.</li>
+</ul>
+
+<ul class="custom-list_3_last">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Passo 7.</code>Filtragem final, formatação e geração dos arquivos de saída.</li>
+</ul>
+
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"></p>
+
+<h4 id="43-conectando-se-ao-nucleo-computacional-npadufrn">4.3. Conectando-se ao Núcleo Computacional <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Copie e cole o comando abaixo no terminal do seu computador. Não esqueça de substituir <span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO</span> pelo seu nome de usuário. Em seguida, digite a senha associada a sua chave SSH cadastrada no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-33" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ssh -p 4422 -i ~/.ssh_SSBE26/ID_NPAD <span style="color: #b84e39;">COLOQUE-AQUI-O-SEU-USUÁRIO</span>@sc2.npad.ufrn.br</code></pre>
+  <button id="copy-btn-33" onclick="copyToClipboard('ssh-path-33', 'copy-btn-33')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora, vamos criar uma pasta para esse projeto chamada <b>tutorial_ipyrad</b>, vamos entrar nessa pasta e ativar o ambiente Conda no qual o ipyrad foi previamente instalado para esse curso. Copie a linha de comandos abaixo no seu terminal:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-34" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir tutorial_ipyrad; cd tutorial_ipyrad; conda activate /home/sbbe26/conda/ipyrad</code></pre>
+  <button id="copy-btn-34" onclick="copyToClipboard('ssh-path-34', 'copy-btn-34')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html" target="_blank">Conda</a> é um sistema de gerenciamento de pacotes de código aberto que facilita a instalação de múltiplas versões de programas com todas as suas dependências em diferentes ambientes. Ele funciona em Linux, macOS e Windows e foi desenvolvido originalmente para programas em Python, mas atualmente pode empacotar e distribuir qualquer tipo de software.</p>
+
+<h4 id="44-obtendo-os-ficheiros-de-trabalho">4.4. Obtendo os ficheiros de trabalho</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Copie a linha de comandos abaixo para baixar os dados e descompactá-los. ⚠️ <b>Atenção! O comando curl acima utiliza a letra O maiúscula, e não o número zero.</b></p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-35" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz; tar -xvzf ipsimdata.tar.gz</code></pre>
+  <button id="copy-btn-35" onclick="copyToClipboard('ssh-path-35', 'copy-btn-35')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Vamos dar uma espiada no arquivo de entrada (biblioteca RAD-seq) que vamos usar nesse tutorial com o comando abaixo. Observe que utilizamos dois comandos acima separados por uma <i>pipe</i> <b>|</b>, que permite que o resultado do primeiro comando seja utilizado como entrada para o segundo comando.</p>
+
+<ul class="custom-list_3_first">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">gunzip –c:</code>Descompacta o arquivo e imprimir seu conteúdo na tela.</li>
+</ul>
+
+<ul class="custom-list_3_last">
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">head –n 12:</code>exibe apenas as primeiras 12 linhas do arquivo FASTQ.</li>
+</ul>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-36" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">gunzip -c ./ipsimdata/rad_example_R1_.fastq.gz | head -n 12</code></pre>
+  <button id="copy-btn-36" onclick="copyToClipboard('ssh-path-36', 'copy-btn-36')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O que estamos observando são as 3 primeiras leituras (reads) do arquivo. Em arquivos FASTQ, que armazenam os dados brutos gerados por sequênciadores de nova geração, cada leitura é representada por 4 linhas. A primeira linha, iniciada pelo símbolo <b>@</b>, contém o identificador da leitura e informações de onde e como ela foi gerada. A segunda linha corresponde à sequência de DNA propriamente dita. A terceira linha contém apenas o separador <b>+</b>. E a quarta linha indica a qualidade de cada base da sequência acima codificada por símbolos, números ou letras que representam valores de qualidade <a href="https://en.wikipedia.org/wiki/Phred_quality_score#Symbols" target="_blank">Phred</a>. Esse valores Phred indicam a confiança do sequênciador na identificação de cada base (variando entre 0 e 40): quanto maior o score Phred, menor a probabilidade de erro. Todas as bases mostradas apresentam a letra B, o que corresponde a um Phred score de 33, e uma probabilidade de erro de ~0.0005, ou seja todas as bases apresentam alta qualidade. Esse padrão uniforme de qualidade não é esperado em dados reais, porém isso acontece aqui por se tratar de dados que foram simulados para esse tutorial.</p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora, vamos dar uma olhada no arquivo de <i>barcodes</i>:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-37" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ./ipsimdata/rad_example_barcodes.txt</code></pre>
+  <button id="copy-btn-37" onclick="copyToClipboard('ssh-path-37', 'copy-btn-37')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Esse arquivo de texto deve conter as informações de todos os indivíduos presentes na biblioteca de sequênciamento. Cada linha representa um indivíduo e inclui seu identificador, seguido por uma tabulação (<i>tab</i>) e pela sequência única de nucleotídeos (<i>barcode</i>) adicionada durante a preparação dessa biblioteca em laboratório. O ipyrad identifica esses barcodes nas leituras para atribuir cada sequência ao indivíduo correto.</p>
+
+<h4 id="45-rodando-o-ipyrad-help">4.5. Rodando o ipyrad (--help)</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Copie o comando do ipyrad abaixo no seu terminal:</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-38" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ipyrad -h</code></pre>
+  <button id="copy-btn-38" onclick="copyToClipboard('ssh-path-38', 'copy-btn-38')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Esse comando pode levar alguns instantes para executar (até um minuto). Isso é normal, não se desespere! Em seguida, você verá a seguinte mensagem de ajuda com a descrição de todos os argumentos usandos pelo comando <b>ipyrad</b> que excuta o programa. Preste atenção especial nos argumentos <b>-n</b>, <b>-p</b>, <b>-s</b>, <b>-c</b>, <b>-r</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">usage: ipyrad [-h] [-v] [-r] [-f] [-q] [-d] [-n NEW] [-p PARAMS] [-s STEPS] [-b [BRANCH ...]] [-m [MERGE ...]] [-c cores]
+              [-t threading] [--MPI] [--ipcluster [IPCLUSTER]] [--download [DOWNLOAD ...]]
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  -r, --results         show results summary for Assembly in params.txt and exit
+  -f, --force           force overwrite of existing data
+  -q, --quiet           do not print to stderror or stdout.
+  -d, --debug           print lots more info to ipyrad_log.txt.
+  -n NEW                create new file 'params-{new}.txt' in current directory
+  -p PARAMS             path to params file for Assembly: params-{assembly_name}.txt
+  -s STEPS              Set of assembly steps to run, e.g., -s 123
+  -b [BRANCH ...]       create new branch of Assembly as params-{branch}.txt, and can be used to drop samples from Assembly.
+  -m [MERGE ...]        merge multiple Assemblies into one joint Assembly, and can be used to merge Samples into one Sample.
+  -c cores              number of CPU cores to use (Default=0=All)
+  -t threading          tune threading of multi-threaded binaries (Default=2)
+  --MPI                 connect to parallel CPUs across multiple nodes
+  --ipcluster [IPCLUSTER]
+                        connect to running ipcluster, enter profile name or profile='default'
+  --download [DOWNLOAD ...]
+                        download fastq files by accession (e.g., SRP or SRR)
+
+  * Example command-line usage: 
+    ipyrad -n data                       ## create new file called params-data.txt 
+    ipyrad -p params-data.txt -s 123     ## run only steps 1-3 of assembly.
+    ipyrad -p params-data.txt -s 3 -f    ## run step 3, overwrite existing data.
+
+  * HPC parallelization across 32 cores
+    ipyrad -p params-data.txt -s 3 -c 32 --MPI
+
+  * Print results summary 
+    ipyrad -p params-data.txt -r 
+
+  * Branch/Merging Assemblies
+    ipyrad -p params-data.txt -b newdata  
+    ipyrad -m newdata params-1.txt params-2.txt [params-3.txt, ...]
+
+  * Subsample taxa during branching
+    ipyrad -p params-data.txt -b newdata taxaKeepList.txt
+
+  * Download sequence data from SRA into directory 'sra-fastqs/' 
+    ipyrad --download SRP021469 sra-fastqs/ 
+
+  * Documentation: http://ipyrad.readthedocs.io
+</code></pre>
+</div>
+
+<h4 id="46-criando-e-editanto-o-arquivo-de-parametros-da-analise">4.6. Criando e editanto o arquivo de parâmetros da análise</h4>
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-39" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ipyrad -n tutorial</code></pre>
+  <button id="copy-btn-39" onclick="copyToClipboard('ssh-path-39', 'copy-btn-39')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Você acabou de criar o arquivo de parâmetros <b>params-tutorial.txt</b> no seu diretório, utlizando o argumento <b>-n</b> do <b>ipyrad</b>. Agora, vamos visualizar o conteúdo desse arquivo com o comando <b>cat</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-40" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat params-tutorial.txt</code></pre>
+  <button id="copy-btn-40" onclick="copyToClipboard('ssh-path-40', 'copy-btn-40')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O conteúdo abaixo serea exibido no seu terminal. ⚠️ <b>Atenção! O caminho do diretório do seu projeto <code>## [1] [project_dir]</code> será diferente do meu (que está mostrado abaixo).</b></p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">------- ipyrad params file (v.0.9.108)------------------------------------------
+tutorial                       ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
+/home/mmvasconcellos/tutorial_ipyrad ## [1] [project_dir]: Project dir (made in curdir if not present)
+                               ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
+                               ## [3] [barcodes_path]: Location of barcodes file
+                               ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
+denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference)
+                               ## [6] [reference_sequence]: Location of reference sequence file
+rad                            ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
+TGCAG,                         ## [8] [restriction_overhang]: Restriction overhang (cut1,) or (cut1, cut2)
+5                              ## [9] [max_low_qual_bases]: Max low quality base calls (Q below 20) in a read
+33                             ## [10] [phred_Qscore_offset]: phred Q score offset (33 is default and very standard)
+6                              ## [11] [mindepth_statistical]: Min depth for statistical base calling
+6                              ## [12] [mindepth_majrule]: Min depth for majority-rule base calling
+10000                          ## [13] [maxdepth]: Max cluster depth within samples
+0.85                           ## [14] [clust_threshold]: Clustering threshold for de novo assembly
+0                              ## [15] [max_barcode_mismatch]: Max number of allowable mismatches in barcodes
+2                              ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
+35                             ## [17] [filter_min_trim_len]: Min length of reads after adapter trim
+2                              ## [18] [max_alleles_consens]: Max alleles per site in consensus sequences
+0.05                           ## [19] [max_Ns_consens]: Max N's (uncalled bases) in consensus
+0.05                           ## [20] [max_Hs_consens]: Max Hs (heterozygotes) in consensus
+4                              ## [21] [min_samples_locus]: Min # samples per locus for output
+0.2                            ## [22] [max_SNPs_locus]: Max # SNPs per locus
+8                              ## [23] [max_Indels_locus]: Max # of indels per locus
+0.5                            ## [24] [max_shared_Hs_locus]: Max # heterozygous sites per locus
+0, 0, 0, 0                     ## [25] [trim_reads]: Trim raw read edges (R1-, -R1, R2-, -R2) (see docs)
+0, 0, 0, 0                     ## [26] [trim_loci]: Trim locus edges (see docs) (R1-, -R1, R2-, -R2)
+p, s, l                        ## [27] [output_formats]: Output formats (see docs)
+                               ## [28] [pop_assign_file]: Path to population assignment file
+                               ## [29] [reference_as_filter]: Reads mapped to this reference are removed in step 3
+</code></pre>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora vamos editar o arquivo <b>params-tutorial.txt</b> usando o editor <b>nano</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-41" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano params-tutorial.txt</code></pre>
+  <button id="copy-btn-41" onclick="copyToClipboard('ssh-path-41', 'copy-btn-41')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Use a seta apontada para baixo no seu teclado para navegar até as linhas dos parâmetros <b>[2]</b> e <b>[3]</b>. Apague essas linhas usando <b>Ctrl + k</b> (duas vezes). Agora, é só apertar <b>Enter</b> para abrir uma nova linha e copiar as linhas abaixo dos parâmetros <b>[2]</b> e <b>[3]</b> no seu documento.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-42" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">./ipsimdata/rad_example_R1_.fastq.gz ## [2] [raw_fastq_path]: Location of raw non-demultiplexed .fq files
+./ipsimdata/rad_example_barcodes.txt ## [3] [barcodes_path]: Location of barcodes file</code></pre>
+    <button id="copy-btn-42" onclick="copyToClipboard('ssh-path-42', 'copy-btn-42')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Para salvar as modificações e sair do <b>nano</b>, pressione os botões <b>Ctrl + x</b>, depois <b>Y</b> e em seguida <b>Enter</b>, salvando as modificações com o mesmo nome de arquivo <b>params-tutorial.txt</b>.</p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Ao executar novamente o comando <b>cat params-tutorial.txt</b>, você deverá obsevar o conteúdo mostrado abaixo. Note que agora incluímos as informações do caminho para a biblioteca com os dados brutos de RAD-seq e do arquivo de barcodes. Vamos manter os demais parâmetros como estão, pois eles refletem a natureza dos dados que foram simulados.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">------- ipyrad params file (v.0.9.108)------------------------------------------
+tutorial                       ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
+/home/mmvasconcellos/tutorial_ipyrad ## [1] [project_dir]: Project dir (made in curdir if not present)
+./ipsimdata/rad_example_R1_.fastq.gz ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
+./ipsimdata/rad_example_barcodes.txt ## [3] [barcodes_path]: Location of barcodes file
+                               ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
+denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference)
+                               ## [6] [reference_sequence]: Location of reference sequence file
+rad                            ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
+TGCAG,                         ## [8] [restriction_overhang]: Restriction overhang (cut1,) or (cut1, cut2)
+5                              ## [9] [max_low_qual_bases]: Max low quality base calls (Q below 20) in a read
+33                             ## [10] [phred_Qscore_offset]: phred Q score offset (33 is default and very standard)
+6                              ## [11] [mindepth_statistical]: Min depth for statistical base calling
+6                              ## [12] [mindepth_majrule]: Min depth for majority-rule base calling
+10000                          ## [13] [maxdepth]: Max cluster depth within samples
+0.85                           ## [14] [clust_threshold]: Clustering threshold for de novo assembly
+0                              ## [15] [max_barcode_mismatch]: Max number of allowable mismatches in barcodes
+2                              ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
+35                             ## [17] [filter_min_trim_len]: Min length of reads after adapter trim
+2                              ## [18] [max_alleles_consens]: Max alleles per site in consensus sequences
+0.05                           ## [19] [max_Ns_consens]: Max N's (uncalled bases) in consensus
+0.05                           ## [20] [max_Hs_consens]: Max Hs (heterozygotes) in consensus
+4                              ## [21] [min_samples_locus]: Min # samples per locus for output
+0.2                            ## [22] [max_SNPs_locus]: Max # SNPs per locus
+8                              ## [23] [max_Indels_locus]: Max # of indels per locus
+0.5                            ## [24] [max_shared_Hs_locus]: Max # heterozygous sites per locus
+0, 0, 0, 0                     ## [25] [trim_reads]: Trim raw read edges (R1-, -R1, R2-, -R2) (see docs)
+0, 0, 0, 0                     ## [26] [trim_loci]: Trim locus edges (see docs) (R1-, -R1, R2-, -R2)
+*                        ## [27] [output_formats]: Output formats (see docs)
+                               ## [28] [pop_assign_file]: Path to population assignment file
+                               ## [29] [reference_as_filter]: Reads mapped to this reference are removed in step 3
+</code></pre>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Esqueci de mencionar que queremos produzir todos os arquivos de saída que o ipyrad produz e não apenas os arquivos padrão. Dessa forma, abra novamente o arquivo de parâmetros com o editor nano, apague as letras <b>p, s, l</b> e adicione um <b>*</b> no último parâmetro <b>[29]</b>, como mostrado acima.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-43" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano params-tutorial.txt</code></pre>
+    <button id="copy-btn-43" onclick="copyToClipboard('ssh-path-43', 'copy-btn-43')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue com as setas do teclado até o parâmetro <b>[29]</b>, adicione o asterisco e saia do <b>nano</b> salvando as últimas modificações ao pressionar os botões <b>Ctrl + X</b>, depois <b>Y</b> e em seguida <b>Enter</b>. A explicação detalhada para cada um dos <b>[29]</b> parâmetros está no site do <a href="https://ipyrad.readthedocs.io/en/stable/6-params.html" target="_blank">Ipyrad</a>.</p>
+
+<h4 id="47-criando-o-arquivo-de-submissao-de-tarefas-no-npadufrn">4.7. Criando o arquivo de submissão de tarefas no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora estamos prontos para executar nossas primeiras análises com o ipyrad. Em ambientes de computação de alto desempenho (HPC), como o <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, os programas não são executados diretamente no terminal interativo. Em vez disso, eles são enviados para um sistema de filas chamado SLURM, que gerencia a excecução de tarefas no cluster computacional. Vamos então criar um arquivo de submissão com o editor <b>nano</b>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-44" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">nano job.slurm.sh</code></pre>
+    <button id="copy-btn-44" onclick="copyToClipboard('ssh-path-44', 'copy-btn-44')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Você verá uma tela em branco. Isso é normal, pois o arquivo ainda não existe. Copie e cole todo o conteúdo abaixo no seu terminal. Em seguida, saia do editor apertando os botões <b>Ctrl + x</b>, depois <b>Y</b> e <b>Enter</b> para salvar as modificações no arquivo <b>job.slurm.sh</b>. Ao digitar <b>cat job.slurm.sh</b>, você deverá visualizar o texto abaixo no seu terminal. ⚠️ <b>OBS:</b> substitua <b>SEU E-MAIL AQUI</b> por seu endereço de e-mail para receber notificação de quando a tarefa começa e termina.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-45" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">#!/bin/bash
+
+#SBATCH --partition=intel-128               # Partição
+#SBATCH --cpus-per-task=8                   # CPUs solicitados
+#SBATCH --hint=compute_bound                # Um processador por core
+#SBATCH --mail-type=ALL                     # Quando um e-mail deve ser enviado?
+#SBATCH --mail-user=SEU E-MAIL AQUI         # Qual e-mail deve ser usado?
+#SBATCH --time=0-1:0                        # Formato padrão: Dias-Horas:Minutos
+
+
+# Paralelização (OpenMP) parametros:
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_PROC_BIND=true
+
+# Rode abaixo o seu comando:
+
+eval "$(conda shell.bash hook)" # inclua esta linha antes executar o conda
+conda activate /home/sbbe26/conda/ipyrad # ative o ambiente onde o ipyrad foi instalado
+
+ipyrad -p params-tutorial.txt -c 8 -s 123</code></pre>
+  <button id="copy-btn-45" onclick="copyToClipboard('ssh-path-45', 'copy-btn-45')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Para enviar essa tarefa ao SLURM com os passos 1, 2, 3 do Ipyrad apenas, use o comando <b>sbatch</b> abaixo.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-46" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">sbatch job.slurm.sh</code></pre>
+    <button id="copy-btn-46" onclick="copyToClipboard('ssh-path-46', 'copy-btn-46')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Vai aparecer na sua tela, algo como: <b>Submitted batch job XXXXXXX</b>. Esse <b>XXXXXXX</b> será o número do seu job no sistema de submissão do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>. Para verificar se sua tarefa está rodando normalmente, vamos usar o comando do SLURM <b>squeue</b> abaixo. ⚠️ Atenção! Lembre de trocar <span style="font-weight: bold; color: #b84e39;">COLOQUE-AQUI-O-SEU-USUÁRIO</span> por seu nome de usuário no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-47" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">squeue -p intel-128 -u <span style="color: #b84e39;">COLOQUE-AQUI-O-SEU-USUÁRIO</span></code></pre>
+    <button id="copy-btn-47" onclick="copyToClipboard('ssh-path-47', 'copy-btn-47')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<h4 id="48-passos-1-2-3-demultiplex-filtragem-e-mapeamento-de-loci-dentro-de-cada-individuo">4.8. Passos 1, 2, 3: Demultiplex, Filtragem e Mapeamento de loci dentro de cada indivíduo</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Vamos entender o comando abaixo que utiliza os argumentos <b>-p</b>, <b>-c</b> e <b>-s</b> para executar os três primeiros passos do Ipyrad.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-48" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ipyrad -p params-tutorial.txt -c 8 -s 123</code></pre>
+    <button id="copy-btn-48" onclick="copyToClipboard('ssh-path-48', 'copy-btn-48')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<ul class="custom-list_3_first">
+  <li><code style="text-align: justify; color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">-p</code>Indica o arquivo de parâmetros da análise <b>params-tutorial.txt</b> que você editou lá em cima. Ele contém todas as informações ncessárias para a execução do Ipyrad.</li>
+</ul>
+
+<ul class="custom-list_3">
+  <li><code style="text-align: justify !important; color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">-c</code>Indica o número de processadores (CPUs) utilizados. Nesse tutorial, usamos apenas 8 CPUs para otimizar o compartilhamento dos recursos computacionais do cluster por todos. Mas esse valor é bem baixo e, em muitos casos, o seu próprio computador já pode ter essa quantidade de CPUs.</li>
+</ul>
+
+<ul class="custom-list_3_last">
+  <li><code style="text-align: justify; color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">-s</code>indica quais passos da pipeline serão executados. Nesse caso, os passos 1, 2 e 3 apenas.</li>
+</ul>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Após a execucão da análise, vamos abrir o arquivo de saída produzido pelo script de submissão de tarefas. Substitua, <span style="font-weight: bold; color: #b84e39;">XXXXXXX</span> pelo número do job que acabou de ser executado.</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-49" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat slurm-<span style="color: #b84e39;">XXXXXXX</span>.out</code></pre>
+    <button id="copy-btn-49" onclick="copyToClipboard('ssh-path-49', 'copy-btn-49')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
 
 <script>
 function copyToClipboard(codeId, buttonId) {
@@ -547,7 +902,7 @@ function copyToClipboard(codeId, buttonId) {
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jun 22, 2026 ⌛
+        Jun 25, 2026 ⌛
 
     </small>
 </p>

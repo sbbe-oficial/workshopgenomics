@@ -420,16 +420,18 @@ hr {
 .custom-list_3 li {
   color: #000000 !important;
   padding: 0px 0px 0px 10px;
+  text-align: justify !important;
 }
 
 .custom-list_3_first {
   color: #000000 !important;
-  padding: 35px 10px 10px 14px;
+  padding: 30px 10px 10px 14px;
 }
 
 .custom-list_3_first li {
   color: #000000 !important;
   padding: 0px 0px 0px 10px;
+  text-align: justify !important;
 }
 
 .custom-list_3_last {
@@ -440,5 +442,6 @@ hr {
 .custom-list_3_last li {
   color: #000000 !important;
   padding: 0px 0px 0px 10px;
+  text-align: justify !important;
 }
 
