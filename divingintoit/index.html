@@ -778,7 +778,7 @@ TGCAG,                         ## [8] [restriction_overhang]: Restriction overha
     <button id="copy-btn-43" onclick="copyToClipboard('ssh-path-43', 'copy-btn-43')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue com as setas do teclado até o parâmetro <b>[29]</b>, adicione o asterisco e saia do <b>nano</b> salvando as últimas modificações ao pressionar os botões <b>Ctrl + X</b>, depois <b>Y</b> e em seguida <b>Enter</b>. A explicação detalhada para cada um dos <b>[29]</b> parâmetros está no site do <a href="https://ipyrad.readthedocs.io/en/stable/6-params.html" target="_blank">Ipyrad</a>.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue com as setas do teclado ⬇️ ⬆️ até o parâmetro <b>[29]</b>, adicione o asterisco e saia do <b>nano</b> salvando as últimas modificações ao pressionar os botões <b>Ctrl + X</b>, depois <b>Y</b> e em seguida <b>Enter</b>. A explicação detalhada para cada um dos <b>[29]</b> parâmetros está no site do <a href="https://ipyrad.readthedocs.io/en/stable/6-params.html" target="_blank">Ipyrad</a>.</p>
 
 <h4 id="47-criando-o-arquivo-de-submissao-de-tarefas-no-npadufrn">4.7. Criando o arquivo de submissão de tarefas no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h4>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora estamos prontos para executar nossas primeiras análises com o ipyrad. Em ambientes de computação de alto desempenho (HPC), como o <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, os programas não são executados diretamente no terminal interativo. Em vez disso, eles são enviados para um sistema de filas chamado SLURM, que gerencia a excecução de tarefas no cluster computacional. Vamos então criar um arquivo de submissão com o editor <b>nano</b>.</p>
@@ -968,7 +968,7 @@ cat ./tutorial_clust_0.85/s3_cluster_stats.txt</code></pre>
     <button id="copy-btn-55" onclick="copyToClipboard('ssh-path-55', 'copy-btn-55')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue até o final do arquivo usando as setas do teclado e altere o comando do Ipyrad para: <b>ipyrad -p params-tutorial.txt -c 8 -s 4567</b>. Em seguida, salve e saia do nano pressionando <b>Ctrl + x</b>, depois <b>Y</b> e <b>Enter</b>. Seu script deve estar como mostrado abaixo se você o abrir usando o comando <b>cat job.slurm.sh</b>.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Navegue até o final do arquivo usando as setas do teclado ⬇️ ⬆️ e altere o comando do Ipyrad para: <b>ipyrad -p params-tutorial.txt -c 8 -s 4567</b>. Em seguida, salve e saia do nano pressionando <b>Ctrl + x</b>, depois <b>Y</b> e <b>Enter</b>. Seu script deve estar como mostrado abaixo se você o abrir usando o comando <b>cat job.slurm.sh</b>.</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">#!/bin/bash
@@ -1113,7 +1113,7 @@ cat ./tutorial_outfiles/tutorial_stats.txt</code></pre>
   <button id="copy-btn-61" onclick="copyToClipboard('ssh-path-61', 'copy-btn-61')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique um dos arquivos de saída com a formatação padrão do Ipyrad (<b>.loci</b>). A partir desse arquivo são gerados todos os outros formatos (<b>.phy</b>, <b>.snps</b>, ...). Use as setas do teclado  para navegar nesse arquivo. ⚠️ Pressione <b>q</b> para sair da tela.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Verifique um dos arquivos de saída com a formatação padrão do Ipyrad (<b>.loci</b>). A partir desse arquivo são gerados todos os outros formatos (<b>.phy</b>, <b>.snps</b>, ...). Use as setas do teclado ⬇️ ⬆️ para navegar nesse arquivo. ⚠️ Pressione <b>q</b> para sair da tela.</p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-62" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">less tutorial_outfiles/tutorial.loci</code></pre>
@@ -1126,7 +1126,9 @@ cat ./tutorial_outfiles/tutorial_stats.txt</code></pre>
 <p style="text-align: center; text-indent: 0px; margin: 0 0 0 0;"><b>~~~~~~~~~~~~~~~~~~~~~~~~ F I M ~~~~~~~~~~~~~~~~~~~~~~~~</b></p>
 
 <p><br></p>
-<p style="text-align: justify; text-indent: 0px; margin: 0 0 0 0;"><b>Parabéns! Você completou o processamento de dados RAD-seq no Ipyrad!</b> 🥳 🎈 🎉</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"><b>Parabéns! Você completou o processamento de dados RAD-seq no Ipyrad!</b> 🥳 🎈 🎉</p>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"></p>
 
 <script>
 function copyToClipboard(codeId, buttonId) {
@@ -1178,7 +1180,7 @@ function copyToClipboard(codeId, buttonId) {
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jun 25, 2026 ⌛
+        Jun 28, 2026 ⌛
 
     </small>
 </p>
