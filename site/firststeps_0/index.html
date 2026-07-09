@@ -1,0 +1,343 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://sbbe-oficial.github.io/workshopgenomics/firststeps_0/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Primeiros Passos 🐤 - Introdução à Análise<br>de Dados Genômicos</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../css/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container" style="display: flex; align-items: center;">
+
+        <!-- Logo image -->
+        <div style="flex-shrink: 0; margin-right: 10px;">
+            <img src="../images/LogoSBBE26.png" alt="Logo" 
+                 style="height: 80px; width: 80px; border-radius: 50%; object-fit: cover;">
+        </div>
+
+        <!-- Site name -->
+        <div style="flex-shrink: 0; margin-right: 20px;">
+        <a class="navbar-brand" href=".." style="padding: 0;">
+        Introdução à Análise<br>de Dados Genômicos
+        </a>
+        </div>
+
+        <!-- Collapsed navigation button (mobile) -->
+        <div class="navbar-header" style="flex-grow: 1;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse" style="flex-grow: 1;">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav" style="display: flex; align-items: center;">
+                
+                
+                    <li >
+                        <a href="../firststeps/">Primeiros Passos</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../divingintoit/">Mãos na Massa</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../reproducibility/">Reprodutibilidade</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../furthermaterial/">Material Adicional</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../participants/">Participantes</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../team/">Equipe</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right" style="display: flex; align-items: center;">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Pesquisar
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#primeiros-passos">Primeiros Passos 🐤</a></li>
+            <li class="second-level"><a href="#ganhando-acesso-ao-npadufrn">Ganhando Acesso ao NPAD/UFRN</a></li>
+                
+                <li class="third-level"><a href="#gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="primeiros-passos">Primeiros Passos 🐤</h1>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Sejam bem-vindos ao nosso minicurso <b>Introdução à Análise de Dados Genômicos</b>! Neste minicurso, tentaremos transmitir um pouco da <i>rotina de trabalho</i> quando se está analisando dados genômicos. Esses dados são geralmente bem pesados e, portanto, de grande demanda computacional. Assim, comumente se faz uso de um <a href="https://pt.wikipedia.org/wiki/Computa%C3%A7%C3%A3o_de_alto_desempenho" target="_blank">Núcleo de Computação de Alto Desempenho</a> para facilitar e, por vezes, permitir esse tipo de análise. Como esses núcleos computacionais armazenam importantes dados científicos, é preciso garantir que todos com acesso a tais núcleos estejam devidamente cadastrados, garantindo assim <i>a boa segurança dos dados armazenados</i>. Ademais, visto que geralmente o usuário se encontra a quilômetros e quilômetros de distância da máquina utilizada, precisamos fazer essa comunicação da forma mais simples possível — sem ícones, sem janelas e sem <i>clicks</i>! Tal comunicação é realizada fazendo uso de uma linguagem computacional bem simples conhecida como <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank"><b>B</b>ourne-<b>A</b>gain <b>SH</b>ell</a>, ou somente <a href="https://pt.wikipedia.org/wiki/Bash" target="_blank">Bash</a> para os mais íntimos. Por fim, o meio que possibilita o uso dessa linguagem reta e direta é a <a href="https://pt.wikipedia.org/wiki/Interface_de_linha_de_comandos" target="_blank">Interface de Linha de Comandos</a> (popularmente conhecida como <a href="https://pt.wikipedia.org/wiki/Interface_de_linha_de_comandos" target="_blank">Terminal</a>).</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Caso você nunca tenha ouvido falar em núcleos computacionais e linguagens computacionais básicas, <i>não se apoquente!</i> O nosso minicurso é mesmo desenhado para introduzir a fundamentação teórica como também dar uma ideia da parte prática por detrás das análises genômicas. Para dar um gostinho de como é colocar as mãos na massa, nós vamos fazer uso do <a href="https://npad.ufrn.br/" target="_blank">Núcleo de Processamento de Alto Desempenho</a> (<a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>) — um supercomputador que está fisicamente localizado em <a href="https://pt.wikipedia.org/wiki/Natal_(Rio_Grande_do_Norte)" target="_blank">Natal-RN</a>.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Portanto, para termos certeza de que tudo irá fluir bem no dia do nosso encontro, precisamos que todos os participantes obtenham acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> <i>antes do início do minicurso</i>. Assim, descrevemos a seguir como conseguir esse acesso. Para os marinheiros de primeira viagem a coisa pode parecer um tanto intimidadora, mas garantimos que é bem mais simples do que parece — é só ir pegar um ☕ ou um 🍵 e seguir o nosso passo a passo abaixo. Para aqueles que preferirem, podem alternativamente seguir o <a href="https://npad.ufrn.br/tutorials/beginner/introduction_part_1/" target="_blank">tutorial do NPAD/UFRN</a>.</p>
+
+<h3 id="ganhando-acesso-ao-npadufrn">Ganhando Acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h3>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> é feito através do cadastro de uma chave pública do tipo RSA que vincula o seu computador ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> de maneira segura. ⚠️ <b>Atenção! É imprescindível realizar os passos abaixo usando o mesmo computador que será usado no dia do minicurso</b>.</p>
+
+<h4 id="gerando-uma-chave-ssh-publica">Gerando uma chave SSH pública</h4>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Há diferenças importantes nos passos a serem seguidos dependendo se o seu computador roda o sistema operacional <a href="#linux-macos">Linux / macOS</a> ou <a href="#windows">Windows</a>:</p>
+
+<h5 id="linux-macos">&gt; Linux / macOS</h5>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Felizmente, esses sistemas operacionais já contam com um terminal próprio em Bash e pronto para ser usado. Assim, abra o terminal do Linux apertanto <b>Ctrl + Alt + T</b>; ou macOS abra a barra de burcas apertando <b>Command + Espaço</b> e no <b>Campo de Busca</b> digite <b>terminal</b> e aperte <b>Enter</b>. Quando o terminal abrir (uma tela preta), digite ou copie o comando abaixo no terminal e aperte enter para criar sua chave pública SSH do tipo RSA. Você deverá digitar uma senha para a sua chave, apertar <b>Enter</b> e depois repetir a mesma senha. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b> Isso feito, a sua chave terá sido criada.</p>
+
+<div style="position: relative; margin: 20px 0;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-1" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir ~/.ssh_SSBE26; ssh-keygen -t rsa -f ~/.ssh_SSBE26/ID_NPAD</code></pre>
+  <button id="copy-btn-1" onclick="copyToClipboard('ssh-path-1', 'copy-btn-1')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Preencha o <i>Cadastro do Aluno</i> usando o <b>mesmo email usado na inscrição do nosso minicurso</b> e selecione a turma <b>SBBE26</b>. Por fim, você deve abrir a sua chave que acabou de criar com o comando abaixo, copiar o seu conteúdo e colá-lo no campo <b>Chave Pública tipo RSA</b>. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-3" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ~/.ssh_SSBE26/ID_NPAD.pub</code></pre>
+  <button id="copy-btn-3" onclick="copyToClipboard('ssh-path-3', 'copy-btn-3')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, você receberá um email do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> pedindo para confirmar o seu cadastro. Isso feito, você receberá um email com o seu <span style="color: #b84e39; font-weight: bold;">usuário</span>. Substitua no comando abaixo o <span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO</span> pelo seu <span style="color: #b84e39; font-weight: bold;">Usuário</span> recebido nesse email. Copie o comando com com essa alteração e cole-o no terminal e aperte <b>Enter</b>. Digite a senha cadastrada e tudo pronto — o seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-4" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ssh -p 4422 -i ~/.ssh_SSBE26/ID_NPAD <span style="color: #b84e39;">COLOQUE-AQUI-O-SEU-USUÁRIO</span>@sc2.npad.ufrn.br</code></pre>
+  <button id="copy-btn-4" onclick="copyToClipboard('ssh-path-4', 'copy-btn-4')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<h5 id="windows">&gt; Windows</h5>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Infelizmente, esse sistema operacional não dispõe de um terminal próprio. Mas podemos resolver isso facilmente — só precisamos de um programinha que emule o terminal. Existem algumas opções, mas a que recomendamos é o <a href="https://mobaxterm.mobatek.net/" target="_blank">MobaXterm</a> que ainda conta com uma versão portátil (que não precisa ser instalada 😀). Você pode baixar essa versão <a href="https://download.mobatek.net/2632026040882303/MobaXterm_Portable_v26.3.zip" target="_blank">aqui</a>. Feito isso, mova o arquivo baixado para um local de fácil acesso e descomprima-o. Depois, é só abrir o arquivo <b>MobaXterm_Personal_26.3</b>. Dentro do programa, aperte em <b>Start local terminal</b> para abrir uma janela de terminal (uma janela preta). Nesse janela, cole o comando abaixo e aperte <b>Enter</b>. Você deverá digitar uma senha para a sua chave, apertar <b>Enter</b> e depois repetir a mesma senha. ⚠️ <b>Atenção! É importante que você se lembre da sua senha depois — guarde-a com sabedoria!</b> Isso feito, a sua chave terá sido criada.</p>
+
+<div style="position: relative; margin: 20px 0;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-5" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">mkdir ~/.ssh_SSBE26; ssh-keygen -t rsa -f ~/.ssh_SSBE26/ID_NPAD</code></pre>
+  <button id="copy-btn-5" onclick="copyToClipboard('ssh-path-5', 'copy-btn-5')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Agora tudo que temos que fazer é registrar a chave criada no sistema do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a>, o que pode ser feito <a href="https://npad.ufrn.br/npad/cadastro/aluno" target="_blank">aqui</a>. Preencha o <i>Cadastro do Aluno</i> usando o <b>mesmo email usado na inscrição do nosso minicurso</b> e selecione a turma <b>SBBE26</b>. Por fim, você deve abrir a sua chave que acabou de criar com o comando abaixo, copiar o seu conteúdo e colá-lo no campo <b>Chave Pública tipo RSA</b>. ⚠️ <b>Atenção! Por favor, assegure-se de copiar todo o conteúdo.</b></p>
+
+<div style="position: relative; margin: 20px 0px;">
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-7" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ~/.ssh_SSBE26/ID_NPAD.pub</code></pre>
+  <button id="copy-btn-7" onclick="copyToClipboard('ssh-path-7', 'copy-btn-7')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Por fim, você receberá um email do <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> pedindo para confirmar o seu cadastro. Isso feito, você receberá um email com o seu <span style="color: #b84e39; font-weight: bold;">usuário</span>. Substitua no comando abaixo o <span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO</span> pelo seu <span style="color: #b84e39; font-weight: bold;">Usuário</span> recebido nesse email. Copie o comando com com essa alteração e cole-o no terminal do <a href="https://mobaxterm.mobatek.net/" target="_blank">MobaXterm</a> e aperte <b>Enter</b>. Digite a senha cadastrada e tudo pronto — o seu acesso ao <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a> está agora liberado! 🎉</p>
+
+<div style="position: relative; margin: 20px 0px;">
+    <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-8" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">ssh -p 4422 -i ~/.ssh_SSBE26/ID_NPAD <span style="color: #b84e39;">COLOQUE-AQUI-O-SEU-USUÁRIO</span>@sc2.npad.ufrn.br</code></pre>
+  <button id="copy-btn-8" onclick="copyToClipboard('ssh-path-8', 'copy-btn-8')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
+</div>
+
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"></p>
+
+<script>
+function copyToClipboard(codeId, buttonId) {
+  const codeElement = document.getElementById(codeId);
+  const textToCopy = codeElement.innerText;
+  const button = document.getElementById(buttonId);
+
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    const originalText = button.innerHTML;
+    const originalColor = button.style.backgroundColor;
+
+    button.innerHTML = '✅ Copiado!';
+    button.style.backgroundColor = '#eaa973';
+
+    setTimeout(() => {
+      button.innerHTML = originalText;
+      button.style.backgroundColor = originalColor;
+    }, 2000);
+  }).catch(() => {
+    const textarea = document.createElement('textarea');
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    button.innerHTML = '✅ Copiado!';
+    button.style.backgroundColor = '#eaa973';
+
+    setTimeout(() => {
+      button.innerHTML = '📋 Copiar';
+      button.style.backgroundColor = '#b84e39';
+    }, 2000);
+  });
+}
+</script></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+<hr>
+<p>
+    
+    <small>
+        Desenvolvido por <a href="https://g-pacheco.github.io/" target="_blank"><b>George Pacheco</b></a> com <a href="https://www.mkdocs.org/" target="_blank"><b>MkDocs</b></a> partindo do modelo <a href="https://sourcefoundry.org/cinder/" target="_blank"><b>Cinder</b></a>.
+        <br>
+        — © Todos os Direitos Reservados —
+        <br>
+        Jul 09, 2026 ⌛
+
+    </small>
+</p>
+
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../js/extra.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Pesquisar</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Por favor, digite abaixo o termo a ser pesquisado.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Pesquisar..." id="mkdocs-search-query" title="Digite o termo de busca aqui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
