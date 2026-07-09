@@ -1,7 +1,23 @@
-site_name: SBBE26 | Minicurso Genômica
+site_name: Introdução à Análise<br>de Dados Genômicos
+site_url: https://sbbe-oficial.github.io/workshopgenomics/
+use_directory_urls: true
+
 theme:
   name: cinder
+  favicon: images/favicon.png
+  custom_dir: overrides
+
 nav:
-  - Primeiros Passos: about.md
-  - Mãos na Massa: firststeps.md
-  - Instrutores: instructors.md
+  - Primeiros Passos: firststeps.md
+  - Mãos na Massa: divingintoit.md
+  - Reprodutibilidade: reproducibility.md
+  - Material Adicional: furthermaterial.md
+  - Participantes: participants.md
+  - Equipe: team.md
+
+extra_css:
+  - https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=swap
+  - css/extra.css
+
+extra_javascript:
+  - js/extra.js

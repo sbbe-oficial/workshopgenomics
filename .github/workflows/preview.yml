@@ -1,0 +1,43 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          # Instala dependências específicas do seu projeto
+          pip install mkdocs-awesome-pages-plugin  # Se usar
+          # pip install mkdocs-material             # Se usar tema material
+          # Adicione qualquer outra dependência aqui
+
+      - name: Build site
+        if: github.event.action != 'closed'
+        run: mkdocs build --clean
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./site/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          qr-code: true
