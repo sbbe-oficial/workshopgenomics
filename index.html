@@ -105,6 +105,11 @@
                 </ul>
 
             <ul class="nav navbar-nav navbar-right" style="display: flex; align-items: center;">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Pesquisar
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -124,34 +129,117 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<div id="mkdocs-encrypted-content" style="display:none">4pIX6C7LwqyUdChCycp9mQ==;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</div>
-<div id="mkdocs-decrypted-content" style="display:none">
-    <form id="mkdocs-decrypt-form">
-        <h1>Conteúdo restrito. Por favor, insira a senha.</h1>
-        <p>Contact your administrator for access to this page.</p>
-        <input type="password" id="mkdocs-content-password" placeholder="Password">
-        
-        <p id="mkdocs-decrypt-msg"></p>
-    </form>
+<h1 id="proposta">Proposta</h1>
+<p style="text-align: justify; text-indent: 35px; font-size: 18px; margin: 12 0 0 0; padding: 0;">O trato de dados genômicos é cada vez mais comum em estudos evolutivos desenvolvidos no Brasil. Portanto, ter domínio mínimo — não somente dos métodos empregados, mas também das boas práticas envolvidas em análises genômicas — passou a ser de grande valia para biólogos evolutivos brasileiros.</p>
+<p style="text-align: justify; text-indent: 35px; font-size: 18px; margin: 12 0 0 0; padding: 0;">Assim, o <a href="https://www.even3.com.br/ii-congresso-brasileiro-de-biologia-evolutiva-657146/" target="_blank">II Congresso da Sociedade Brasileira de Biologia Evolutiva</a> — <a href="https://www.even3.com.br/ii-congresso-brasileiro-de-biologia-evolutiva-657146/" target="_blank">SBBE26</a> oferecerá este minicurso que é voltado para pesquisadores (independentemente do estágio da carreira) que estão dando seus primeiros passos na análise de dados genômicos. Serão apresentados os tipos de sequenciamento de nova geração, os primeiros passos no processamento de dados de <i>short-reads</i> e algumas análises exploratórias iniciais.</p>
+<p style="text-align: justify; text-indent: 35px; font-size: 18px; margin: 12 0 0 0; padding: 0;">A atividade ocorrerá um dia antes do início do congresso — <b>14 de julho de 2026</b> — na <b>Sala Alfred Wallace</b> do <a href="https://www.even3.com.br/ii-congresso-brasileiro-de-biologia-evolutiva-657146/" target="_blank">SBBE26</a> que fica no <a href="https://maps.app.goo.gl/mMa4sqiELH6HEEB77" target="_blank">Centro de Atividades Didáticas 1</a> — <a href="https://maps.app.goo.gl/mMa4sqiELH6HEEB77" target="_blank">CAD 1</a> da <a href="https://www.ufmg.br/" target="_blank">Universidade Federal de Minas Gerais</a> — <a href="https://www.ufmg.br/" target="_blank">UFMG</a>.</p>
+<p style="text-align: justify; text-indent: 35px; font-size: 18px; margin: 12 0 -68 0; padding: 0;">O minicurso contará com 28 <a href="http://127.0.0.1:8000/workshopgenomics/participants/" target="_blank">participantes</a> e será ministrado por
+<a href="https://sbbe-oficial.github.io/workshopgenomics/team/#george-pacheco" target="_blank">George Pacheco</a>, <a href="https://sbbe-oficial.github.io/workshopgenomics/team/#mariana-vasconcellos" target="_blank">Mariana Vasconcellos</a>, <a href="https://sbbe-oficial.github.io/workshopgenomics/team/#waldir-miron" target="_blank">Waldir Miron</a>, com o auxílio dos monitores <a href="https://sbbe-oficial.github.io/workshopgenomics/team/#ana-cecilia-holler-del-prette" target="_blank">Ana Cecilia Holler del Prette</a> e <a href="https://sbbe-oficial.github.io/workshopgenomics/team/#jean-oliveira" target="_blank">Jean Oliveira</a>.</p>
+
+<div style="width: 800px; height: 800px; overflow: hidden; margin: 55 0 -70 0;">
+  <img src="images/SBBE26_Mapa.jpg" style="width: 100%; height: 100%; object-fit: contain;">
 </div>
 
-<script type="text/javascript">
-var encryptcontent_id = "encryptcontent_1";
-var encryptcontent_path = "workshopgenomics/";
-var decryption_failure_message = "Invalid password.";
-var encryptcontent_keystore = ["unu3yip+GaLp8U2XeUZ2NQ==;7VJ0U2VBvnSUgQPDaPAsJ/SvDjWdbvAalbEuiWCWtZcv9nuR//d/0OpzaiWZIEba8KE/JyKEYqSPxV8iH6AEC1WIy5X/ih7jD+O5S3ddjKgtBWv4fuRh3xNKSDkaziDE;4jnVSjzEcpoN6dZMIhEB3w=="];
-var encryptcontent_obfuscate = 0;
+<h2 id="cronograma">Cronograma</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px; border-bottom: 2px solid #b84e39; font-size: 16px;">Hora</th>
+      <th style="text-align: left; padding: 8px; border-bottom: 2px solid #b84e39; font-size: 16px;">Tipo da Atividade</th>
+      <th style="text-align: left; padding: 8px; border-bottom: 2px solid #b84e39; font-size: 16px;">Tópico</th>
+      <th style="text-align: left; padding: 8px; border-bottom: 2px solid #b84e39; font-size: 16px;">Instrutor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">08:00h — 08:20h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">—</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Apresentação da Proposta do Minicurso</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">George Pacheco</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">08:20h — 09:20h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Teórica</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Breve Introdução à Genômica</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Waldir Miron</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">09:20h — 09:45h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Teórica</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Precisamos de Núcleos Computacionais! Mas O Que São Mesmo?</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">George Pacheco</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">09:45h — 10:05h</td>
+      <td style="padding: 8px; border-bottom: 1px solid #eaa973; text-align: center; font-size: 14px; font-weight: bold;" colspan="3">☕ C A F É&nbsp;&nbsp;/&nbsp;&nbsp;C H Á 🍵</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">10:05h — 10:30h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Prática</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Acesso ao <a href="https://npad.ufrn.br/npad/bemvindo" target="_blank">NPAD/UFRN</a></td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Todos</td>
+    </tr>
+      <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">10:30h — 11:00h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Teórica / Prática</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Introdução ao Ambiente UNIX</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">George Pacheco</td>
+    </tr>
+      <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">11:00h — 12:00h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Prática</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Turorial do <a href="https://ipyrad.readthedocs.io/en/master/" target="_blank">Ipyrad</a> I</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Mariana Vasconcellos</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">12:00h — 13:00h</td>
+      <td style="padding: 8px; border-bottom: 1px solid #eaa973; text-align: center; font-size: 14px; font-weight: bold;" colspan="3">🍲 A L M O Ç O 🍲</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">13:00h — 15:00h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Prática</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Turorial do <a href="https://ipyrad.readthedocs.io/en/master/" target="_blank">Ipyrad</a> II</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Mariana Vasconcellos</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">15:00h — 15:40h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Teórica / Prática</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Reprodutibilidade</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">George Pacheco</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">15:40h — 16:00h</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">—</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Considerações Finais & Perguntas</td>
+      <td style="padding: 8px; font-size: 14px; border-bottom: 1px solid #eaa973;">Todos</td>
+    </tr>
+  </tbody>
+</table>
 
-const encryptcontent_event = new Event("encryptcontent_event");
-var encryptcontent_done = false;
-</script>
-<script type="module">
-if (!window.hasOwnProperty("init_decryptor")) {
-    import("./assets/javascripts/decrypt-contents.js");
-} else {
-    init_decryptor();
-}
-</script></div>
+<p><br></p>
+<h2 id="apoio">Apoio</h2>
+<div style="display: flex; justify-content: left; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-top: -70px;">
+<div style="display: flex; justify-content: left; align-items: flex-end; gap: 20px; flex-wrap: wrap;">
+        <div style="text-align: center;">
+        <div style="width: 275px; height: 275px; border-radius: 50%; overflow: hidden;">
+            <img src="images/sbbe-logo.png" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <p style="margin-top: -60px; font-weight: bold; font-size: 16px; text-align: center;"><a href="https://www.sbbevol.org/" target="_blank">Sociedade Brasileira<br>de Biologia Evolutiva —</a><br><a href="https://www.sbbevol.org/" target="_blank">SBBE</a></p>
+    </div>
+    <div style="text-align: center;">
+        <div style="width: 275px; height: 275px; border-radius: 50%; overflow: hidden;">
+            <img src="images/ufmg-logo.jpg" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <p style="margin-top: -60px; font-weight: bold; font-size: 16px; text-align: center;"><a href="https://www.ufmg.br/" target="_blank">Universidade Federal<br>de Minas Gerais —</a><br><a href="https://www.ufmg.br/" target="_blank">UFMG</a></p>
+    </div>
+    <div style="text-align: center;">
+    <div style="width: 275px; height: 275px; border-radius: 50%; overflow: hidden;">
+            <img src="images/npad-logo.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <p style="margin-top: -60px; font-weight: bold; font-size: 16px; text-align: center;"><a href="https://npad.ufrn.br/" target="_blank">Núcleo de Processamento<br>de Alto Desempenho —</a><br><a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></p>
+    </div>
+</div>
+</div></div>
         
         
     </div>
@@ -187,8 +275,34 @@ if (!window.hasOwnProperty("init_decryptor")) {
     
     <script src="js/base.js"></script>
     <script src="js/extra.js"></script>
+    <script src="search/main.js"></script>
 
-    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Pesquisar</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Por favor, digite abaixo o termo a ser pesquisado.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Pesquisar..." id="mkdocs-search-query" title="Digite o termo de busca aqui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -234,5 +348,5 @@ if (!window.hasOwnProperty("init_decryptor")) {
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-07-13 05:20:02.547909+00:00
+Build Date UTC : 2026-07-13 05:21:29.320030+00:00
 -->
