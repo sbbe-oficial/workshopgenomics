@@ -139,14 +139,14 @@
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Caso você ainda não tenha uma conta no <a href="https://github.com/" target="_blank">GitHub</a>, você pode criar uma de forma gratuita <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home" target="_blank">aqui</a> usando o caminho que você achar melhor.</p>
 
 <h4 id="12-criando-um-novo-repositorio">1.2. Criando Um Novo Repositório</h4>
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Os códigos armazenados no <a href="https://github.com/" target="_blank">GitHub</a> são hospedados dentro de repositórios destinados a projetos específicos, e esses repositórios podem ser <i>públicos</i> ou <i>privados</i>. Assim, precisamos agora criar um novo repositório, o que pode ser feito <a href="https://github.com/new" target="_blank">aqui</a> segundo esses parâmetros (não é preciso se preocupar com as demais opções):</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Os códigos armazenados no <a href="https://github.com/" target="_blank">GitHub</a> são hospedados dentro de repositórios destinados a projetos específicos, e esses repositórios podem ser <i>públicos</i> ou <i>privados</i>. Assim, precisamos agora criar um novo repositório chamado <b>WorkshopSBBE26</b>, o que pode ser feito <a href="https://github.com/new" target="_blank">aqui</a> segundo esses parâmetros (não é preciso se preocupar com as demais opções):</p>
 
 <ul class="custom-list_3_first">
-  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Repository Name</code>Escolha um nome que faça sentido não somente para você, mas também para outras pessoas que venham a visitar o seu repositório.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Repository Name</code>WorkshopSBBE26</li>
 </ul>
 
 <ul class="custom-list_3">
-  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Description</code>Adicione uma pequena descrição do seu repositório. Mais uma vez, lembre-se que é bom ter uma descrição que seja de fácil entendimento por parte de possíveis visitantes.</li>
+  <li><code style="color: #b84e39 !important; background-color: transparent; padding: 0; font-weight: bold; margin-right: 18px;">Description</code>Adicione uma pequena descrição do seu repositório. Lembre-se que é bom ter uma descrição que seja de fácil entendimento por parte de possíveis visitantes.</li>
 </ul>
 
 <h4 id="13-gerando-uma-chave-ssh-publica-no-npadufrn">1.3. Gerando uma chave SSH pública no <a href="https://npad.ufrn.br/" target="_blank">NPAD/UFRN</a></h4>
@@ -206,10 +206,10 @@
   <button id="copy-btn-27" onclick="copyToClipboard('ssh-path-27', 'copy-btn-27')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Daí você pode fazer a conexão de fato adicionando ao comando abaixo o seu <b>nome de usuário no GitHub</b> e o <b>nome do repositório</b> em questão:</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Daí você pode fazer a conexão de fato adicionando ao comando abaixo o seu <b>nome de usuário no GitHub</b> e <b>WorkshopSBBE26</b> como nome de repositório:</p>
 
 <div style="position: relative; margin: 20px 0px;">
-  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-28" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git remote add origin git@github.com:<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">NOME-DO-SEU-REPOSITÓRIO</span>.git</code></pre>
+  <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-28" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">git remote add origin git@github.com:<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26.git</code></pre>
   <button id="copy-btn-28" onclick="copyToClipboard('ssh-path-28', 'copy-btn-28')" style="position: absolute; top: 8px; right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
@@ -223,21 +223,21 @@
 
 ### Data Processing 
 
-The dataset [ipsimdata.tar.gz](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/ipsimdata.tar.gz) was processed with [Ipyrad](https://ipyrad.readthedocs.io/en/master/) using the parameters in [params-tutorial.txt](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/params-tutorial.txt).
+The dataset [ipsimdata.tar.gz](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/ipsimdata.tar.gz) was processed with [Ipyrad](https://ipyrad.readthedocs.io/en/master/) using the parameters in [params-tutorial.txt](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/params-tutorial.txt).
 
 ### Population Structure  
 
 #### Principal Component Analysis
 
-This analysis was performed with the software [Plink](https://www.cog-genomics.org/plink/) as described in [RunsPCA.sh](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/SBBE26_PopGen/PCA/RunsPCA.sh). The results were ploted using R script [PlotsPCA.R](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/SBBE26_PopGen/PCA/PlotsPCA.R).
+This analysis was performed with the software [Plink](https://www.cog-genomics.org/plink/) as described in [RunsPCA.sh](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/PCA/RunsPCA.sh). The results were ploted using R script [PlotsPCA.R](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/PCA/PlotsPCA.R).
 
-- [PCA_Plot.pdf](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/SBBE26_PopGen/PCA/PCA_Plot.pdf)
+- [PCA_Plot.pdf](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/PCA/PCA_Plot.pdf)
 
 #### Estimation of Individual Ancestries
 
-This analysis was performed with the software [Admixture](https://dalexander.github.io/admixture/) as described in [RunsAdmixture.sh](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/SBBE26_PopGen/Admixture/RunsAdmixture.sh).
+This analysis was performed with the software [Admixture](https://dalexander.github.io/admixture/) as described in [RunsAdmixture.sh](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/Admixture/RunsAdmixture.sh). The results were ploted using R script [PlotsAdmixture.R](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/Admixture/PlotsAdmixture.R).
 
-- [Admixture_Plot.pdf](https://github.com/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-USUÁRIO-GITHUB</span>/<span style="color: #b84e39; font-weight: bold;">COLOQUE-AQUI-O-SEU-REPOSITÓRIO-GITHUB</span>/blob/main/SBBE26_PopGen/Admixture/Admixture_Plot.pdf)</code></pre>
+- [Admixture_Plot.pdf](https://github.com/<span style="color: #b84e39; font-weight: bold;">USUÁRIO-GITHUB</span>/WorkshopSBBE26/blob/main/SBBE26_PopGen/Admixture/Admixture_Plot.pdf)</code></pre>
   <button id="copy-btn-29" onclick="copyToClipboard('ssh-path-29', 'copy-btn-29')" style="position: absolute; top: 42.5%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
@@ -319,7 +319,7 @@ function copyToClipboard(codeId, buttonId) {
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jul 13, 2026 ⌛
+        Jul 14, 2026 ⌛
 
     </small>
 </p>

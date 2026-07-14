@@ -148,7 +148,7 @@
 <h4 id="11-tutorial-ipyrad">1.1. Tutorial <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a></h4>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">O <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a> é numa <i>pipeline</i> de análises desenvolvidas em Python para processar e analisar dados gerados por técnicas de representação reduzida do genoma, como RAD-seq e GBS. Essas técnicas utilizam <a href="https://pt.wikipedia.org/wiki/Enzima_de_restri%C3%A7%C3%A3o" target="_blank">enzimas de restrição</a> para cortar o DNA em sítios específicos e sequênciar pequenos fragmentos adjacentes a esses sítios de restrição, permitindo a amostragem de apenas uma pequena fração do genoma de muitos indivíduos. Durante o preparo das bibliotecas genômicas em laboratório, cada amostra recebe um adaptador contendo uma sequência única de nucleotídeos, como um "código de barra molecular" (<i>barcode</i>), que permite combinar múltiplas amostras em uma mesma biblioteca para sequênciamento simultâneo em plataformas de sequênciamento de nova geração, como a <a href="https://pt.wikipedia.org/wiki/Illumina" target="_blank">Illumina</a> por exemplo. A principal função do <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a> é identificar sequências homólogas em diferentes indivíduos (ou seja, correspondentes à mesma região genômica) e construir matrizes de dados genéticos que serão utilizadas em análises posteriores. Essas matrizes podem conter alinhamentos completos para cada locus (variando entre 50–300 bp dependendo do sequênciador utilizado) ou apenas os sítios polimórficos (SNPs, do inglês <i>Single Nucleotide Polymorphisms</i>).</p>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Existem diversos programas disponíveis para processar dados de RAD-seq. Neste tutorial, utilizaremos o ipyrad devido à sua flexibilidade e capacidade de gerar arquivos de saída compatíveis com diversos programas comumente utilizados em estudos filogenéticos, filogeográficos, ou de genômica populacional. Além disso, você não precisa aprender a programar no Python para utilizá-lo, basta entender como usar seus comandos. Você pode aprender mais sobre o Ipyrad <a href="https://ipyrad.readthedocs.io/en/stable/1-ethos.html" target="_blank">aqui</a>.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Existem diversos programas disponíveis para processar dados de RAD-seq. Neste tutorial, utilizaremos o ipyrad devido à sua flexibilidade e capacidade de gerar arquivos de saída compatíveis com diversos programas comumente utilizados em estudos filogenéticos, filogeográficos, ou de genômica populacional. Além disso, você não precisa aprender a programar no Python para utilizá-lo, basta entender como usar seus comandos. Você pode aprender mais sobre esta ferramenta lendo a página do <a href="https://ipyrad.readthedocs.io/en/stable/1-ethos.html" target="_blank">Ipyrad</a>.</p>
 
 <p><br></p>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;"><b>Referência do programa:</b></p>
@@ -158,8 +158,9 @@
 <h4 id="12-os-7-passos-basicos-da-pipeline-ipyrad">1.2. Os 7 passos básicos da pipeline <a href="https://ipyrad.readthedocs.io/en/stable/" target="_blank">Ipyrad</a></h4>
 <p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">De forma bem ampla, o que o ipyrad faz é processar as leituras brutas geradas pelo sequênciador de nova geração em arquivos de saída pré-formatados para análises posteriores. Os principais passos da pipeline são:</p>
 
-<div style="width: 949px; height: 949px; margin: -300 0 -350 0;">
-  <img src="../images/IpyradPipeline.jpeg" style="width: 100%; height: 100%; object-fit: contain;">
+<p><br></p>
+<div style="width: 949px; max-width: 100%;">
+  <img src="../images/IpyradPipeline.jpeg" style="width: 100%; height: auto; display: block;">
 </div>
 
 <ul class="custom-list_3_first">
@@ -377,8 +378,8 @@ p, s, l                        ## [27] [output_formats]: Output formats (see doc
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; margin: 0; border: 1px solid #eaa973;"><code style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">------- ipyrad params file (v.0.9.108)------------------------------------------
 tutorial                       ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
 /home/mmvasconcellos/tutorial_ipyrad ## [1] [project_dir]: Project dir (made in curdir if not present)
-./ipsimdata/rad_example_R1_.fastq.gz ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
-./ipsimdata/rad_example_barcodes.txt ## [3] [barcodes_path]: Location of barcodes file
+./ipsimdata/rad_example_R1_.fastq.gz  ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
+./ipsimdata/rad_example_barcodes.txt  ## [3] [barcodes_path]: Location of barcodes file
                                ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
 denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference)
                                ## [6] [reference_sequence]: Location of reference sequence file
@@ -434,7 +435,7 @@ TGCAG,                         ## [8] [restriction_overhang]: Restriction overha
 #SBATCH --cpus-per-task=8                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -442,10 +443,13 @@ TGCAG,                         ## [8] [restriction_overhang]: Restriction overha
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OMP_PROC_BIND=true
 
-# Runs commands ~ 
-eval "$(conda shell.bash hook)" # inclua esta linha antes executar o conda
-conda activate /home/sbbe26/conda/ipyrad # ative o ambiente onde o ipyrad foi instalado
+# Allows Conda environment ~ 
+eval "$(conda shell.bash hook)"
 
+# Activates Conda environment ~
+conda activate /home/sbbe26/conda/ipyrad
+
+# Runs Ipyrad ~
 ipyrad -p params-tutorial.txt -c 8 -s 123</code></pre>
   <button id="copy-btn-45" onclick="copyToClipboard('ssh-path-45', 'copy-btn-45')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
@@ -578,7 +582,7 @@ step 7: None
     <button id="copy-btn-53" onclick="copyToClipboard('ssh-path-53', 'copy-btn-53')" style="position: absolute; top: 50%; transform: translateY(-50%); right: 8px; background-color: #b84e39; color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: system-ui, sans-serif; transition: all 0.2s;">📋 Copiar</button>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados após os passos 1, 2 e 3 com os comandos baixos. ⚠️ <b>Atenção!</b> Devemos roda um único comando <b>cat</b> por vez.</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados após os passos 1, 2 e 3 com os comandos baixos. ⚠️ <b>Atenção! Você deve rodar um único comando cat por vez.</b></p>
 
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-54" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ./tutorial_fastqs/s1_demultiplex_stats.txt
@@ -612,7 +616,7 @@ cat ./tutorial_clust_0.85/s3_cluster_stats.txt</code></pre>
 #SBATCH --cpus-per-task=8                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -620,10 +624,13 @@ cat ./tutorial_clust_0.85/s3_cluster_stats.txt</code></pre>
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OMP_PROC_BIND=true
 
-# Runs commands ~
-eval "$(conda shell.bash hook)" # inclua esta linha antes executar o conda
-conda activate /home/sbbe26/conda/ipyrad # ative o ambiente onde o ipyrad foi instalado
+# Allows Conda environment ~ 
+eval "$(conda shell.bash hook)"
 
+# Activates Conda environment ~
+conda activate /home/sbbe26/conda/ipyrad
+
+# Runs Ipyrad ~
 ipyrad -p params-tutorial.txt -c 8 -s 4567
 </code></pre>
 </div>
@@ -723,8 +730,8 @@ step 7: ./tutorial_outfiles/tutorial_stats.txt
 </code></pre>
 </div>
 
-<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados nos passos <b>4</b>, <b>5</b> e <b>7</b> através dos comandos abaixo. ⚠️ <b>Atenção!</b> Devemos roda um único comando <b>cat</b> por vez.</p>
-</p>
+<p style="text-align: justify; text-indent: 35px; margin: 0 0 0 0;">Alternativamente, podemos examinar os arquivos de resumo <b>stats</b> gerados nos passos <b>4</b>, <b>5</b> e <b>7</b> através dos comandos abaixo. ⚠️ <b>Atenção! Você deve rodar um único comando cat por vez.</b></p>
+
 <div style="position: relative; margin: 20px 0px;">
   <pre style="background-color: #fcfdff; color: #fcfdff; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; margin: 0; border: 1px solid #eaa973;"><code id="ssh-path-60" style="color: #000000; background-color: transparent; padding: 0; font-weight: bold;">cat ./tutorial_clust_0.85/s4_joint_estimate.txt
 cat ./tutorial_consens/s5_consens_stats.txt
@@ -776,7 +783,7 @@ cat ./tutorial_outfiles/tutorial_stats.txt</code></pre>
 #SBATCH --cpus-per-task=2                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -829,7 +836,7 @@ plink --bfile ./tutorial --extract ./tutorial_LD.prune.in --make-bed --out ./tut
 #SBATCH --cpus-per-task=2                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -875,7 +882,7 @@ plink --bfile ../tutorial_pruned --pca 20 --out ./tutorial_pruned_PCA --allow-ex
 #SBATCH --cpus-per-task=2                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -916,7 +923,7 @@ Rscript --vanilla --slave ./PlotsPCA.R</code></pre>
 #SBATCH --cpus-per-task=4                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -961,7 +968,7 @@ done</code></pre>
 #SBATCH --cpus-per-task=2                   # Required CPUs
 #SBATCH --hint=compute_bound                # Use one processor per core
 #SBATCH --mail-type=ALL                     # Sent emails
-#SBATCH --mail-user=SEU E-MAIL AQUI         # Used email
+#SBATCH --mail-user=<span style="color: #b84e39; font-weight: bold;">SEU E-MAIL AQUI</span>         # Used email
 #SBATCH --time=0-1:0                        # Standard Pattern: Days-Hours:Minutes
 
 
@@ -1045,7 +1052,7 @@ function copyToClipboard(codeId, buttonId) {
         <br>
         — © Todos os Direitos Reservados —
         <br>
-        Jul 13, 2026 ⌛
+        Jul 14, 2026 ⌛
 
     </small>
 </p>
