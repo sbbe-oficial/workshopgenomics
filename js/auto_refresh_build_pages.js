@@ -68,10 +68,10 @@ function showUpdatePopup(latestModified) {
   popup.style.border = '2px solid #007acc';
   popup.style.minWidth = '300px';
   popup.style.textAlign = 'center';
-  popup.textContent = 'This page has been updated. Reload?';
+  popup.textContent = 'Esta página foi atualizada. Deseja recarregar?';
 
   const yesButton = document.createElement('button');
-  yesButton.textContent = 'Yes';
+  yesButton.textContent = 'Sim';
   yesButton.style.marginLeft = '10px';
   yesButton.style.marginTop = '15px';
   yesButton.style.padding = '8px 16px';
@@ -87,7 +87,7 @@ function showUpdatePopup(latestModified) {
   };
 
   const noButton = document.createElement('button');
-  noButton.textContent = 'No';
+  noButton.textContent = 'Não';
   noButton.style.marginLeft = '10px';
   noButton.style.marginTop = '15px';
   noButton.style.padding = '8px 16px';
