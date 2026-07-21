@@ -71,7 +71,7 @@ function showUpdatePopup(latestModified) {
   popup.textContent = 'Esta página foi atualizada. Deseja recarregar?';
 
   const yesButton = document.createElement('button');
-  yesButton.textContent = 'Sim';
+  yesButton.textContent = 'Sim!';
   yesButton.style.marginLeft = '10px';
   yesButton.style.marginTop = '15px';
   yesButton.style.padding = '8px 16px';
@@ -87,7 +87,7 @@ function showUpdatePopup(latestModified) {
   };
 
   const noButton = document.createElement('button');
-  noButton.textContent = 'Não';
+  noButton.textContent = 'Não.';
   noButton.style.marginLeft = '10px';
   noButton.style.marginTop = '15px';
   noButton.style.padding = '8px 16px';
