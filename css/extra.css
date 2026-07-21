@@ -359,13 +359,11 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
 }
 
-/* Apply border only to the outer container */
 .bs-sidebar {
     border: 1px solid #eaa973 !important;
     border-radius: 8px !important;
 }
 
-/* Remove border and border-radius from inner nav */
 .bs-sidebar .nav {
     border: none !important;
     border-radius: 0 !important;
@@ -445,3 +443,9 @@ hr {
   text-align: justify !important;
 }
 
+.auto-refresh-popup {
+  background: #eaa973 !important;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem;
+}
